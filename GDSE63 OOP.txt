@@ -1,0 +1,6824 @@
+Q1
+class Item{
+	int code;
+	String name;
+	double unitPrice;
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Item ob;
+		ob=new Item();
+		ob.code=1001;
+		ob.name="Suger";
+		ob.unitPrice=340.00;
+		//---------------------------
+		
+		System.out.println("Code : "+ob.code);
+		System.out.println("Name : "+ob.name);
+		System.out.println("Price: "+ob.unitPrice);
+		
+	} 
+}
+///////////////////////////////////////////////////////////////////////////
+Q2
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student();
+		s1.id="S001";
+		s1.name="Nimal";
+		s1.prf=67;
+		s1.dbms=78;
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q3
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student();
+		/*s1.id="S001";
+		s1.name="Nimal";
+		s1.prf=67;
+		s1.dbms=78;*/
+		s1.setId("S001");
+		s1.setName("Nimal");
+		s1.setPrf(67);
+		s1.setDbms(78);
+		
+		System.out.println("Id   : "+s1.getId());
+		System.out.println("Name : "+s1.getName());
+		System.out.println("Prf  : "+s1.getPrf());
+		System.out.println("Prf  : "+s1.getDbms());
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q4 Constructor method
+======================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	/*Compiler inserts
+	Student(){
+		id=null;
+		name=null;
+		prf=0;
+		dbms=0;
+	}	
+	*/ 
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student(); //--->"Student()"-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //null
+		System.out.println("Name : "+s1.getName());//null
+		System.out.println("Prf  : "+s1.getPrf()); //0
+		System.out.println("Prf  : "+s1.getDbms());//0
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q4
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	Student(){
+		id="S";
+		name="A";
+		prf=-1;
+		dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student(); //--->"Student()"-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //null
+		System.out.println("Name : "+s1.getName());//null
+		System.out.println("Prf  : "+s1.getPrf()); //0
+		System.out.println("Prf  : "+s1.getDbms());//0
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q5 Parameterized Constructors 
+=============================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //S001
+		System.out.println("Name : "+s1.getName());//Nimal
+		System.out.println("Prf  : "+s1.getPrf()); //67
+		System.out.println("Prf  : "+s1.getDbms());//78
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q6 Contructor overloading
+=========================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println("Id   of s1 : "+s1.getId()); //S001
+		System.out.println("Name of s1 : "+s1.getName());//Nimal
+		System.out.println("Prf  of s1 : "+s1.getPrf()); //67
+		System.out.println("Prf  of s1 : "+s1.getDbms());//78
+		
+		Student s2=new Student("S002","Amal");
+		System.out.println("Id   of s2 : "+s2.getId()); //S002
+		System.out.println("Name of s2 : "+s2.getName());//Amal
+		System.out.println("Prf  of s2 : "+s2.getPrf()); //-1
+		System.out.println("Prf  of s2 : "+s2.getDbms());//-1
+		
+		Student s3=new Student();
+		System.out.println("Id   of s3 : "+s3.getId()); //null
+		System.out.println("Name of s3 : "+s3.getName());//null
+		System.out.println("Prf  of s3 : "+s3.getPrf()); //-1
+		System.out.println("Prf  of s3 : "+s3.getDbms());//-1
+		
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////
+Q7 public String toString()
+===========================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.toString()); //
+		System.out.println(s1); //
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q8
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String toString(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.toString()); //
+		System.out.println(s1); //
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+Q9
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.getStudentDetails()); //
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+	Object Arrays (Objects Reference Arrays)
+/////////////////////////////////////////////////////////////////////////////
+Q10
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student[] stArray=new Student[5];
+		stArray[0]=new Student("S001","Danapala",56,67);
+		stArray[1]=new Student("S002","Gunapala",56,67);
+		stArray[2]=new Student("S003","Somapala",56,67);
+		stArray[3]=new Student("S004","Siripala",56,67);
+		stArray[4]=new Student("S005","Amarapala",56,67);
+		
+		for(Student s1 : stArray){
+			System.out.println(s1.getStudentDetails());
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q11
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		int[] ar={34,56,67,768,89};
+		Student[] stArray={	new Student("S001","Danapala",56,67),
+							new Student("S002","Gunapala",56,67),
+							new Student("S003","Somapala",56,67),
+							new Student("S004","Siripala",56,67),
+							new Student("S005","Amarapala",56,67)
+						  };
+		
+		for(Student s1 : stArray){
+			System.out.println(s1.getStudentDetails());
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+										Encapsulation
+/////////////////////////////////////////////////////////////////////////////
+Q12
+import javax.swing.*;
+class Demo{
+	public static void main(String arg[]){
+		JFrame f1; //Create a reference Variable type "JFrame"
+		f1=new JFrame();//Create an Object type "JFrame"
+		f1.setSize(300,300);
+		f1.setDefaultCloseOperation(3);
+		f1.setLocationRelativeTo(null);
+		f1.setTitle("Calculator");
+		f1.setVisible(true);
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q13
+import javax.swing.*;
+class Demo{
+	public static void main(String arg[]){
+		JFrame f1; //Create a reference Variable type "JFrame"
+		f1=new JFrame();//Create an Object type "JFrame"
+		f1.setSize(300,300);
+		f1.setDefaultCloseOperation(2);
+		f1.setLocationRelativeTo(null);
+		f1.setTitle("Calculator");
+		f1.setVisible(true);
+		
+		JFrame f2=new JFrame();
+		f2.setSize(400,400);
+		f2.setDefaultCloseOperation(2);
+		f2.setLocationRelativeTo(null);
+		f2.setTitle("Add Customer Form");
+		f2.setVisible(true);
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q14 Adding a Button
+===================
+import javax.swing.*;
+import java.awt.*;
+class Demo{
+	public static void main(String arg[]){
+		JFrame f1; //Create a reference Variable type "JFrame"
+		f1=new JFrame();//Create an Object type "JFrame"
+		f1.setSize(300,300);
+		f1.setDefaultCloseOperation(2);
+		f1.setLocationRelativeTo(null);
+		f1.setTitle("Calculator");
+		
+		JButton exitButton=new JButton("Exit");
+		exitButton.setFont(new Font("",1,30));
+		
+		f1.add("South",exitButton);
+		
+		f1.setVisible(true);
+		
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q15
+import javax.swing.*;
+import java.awt.*;
+class Demo{
+	public static void main(String arg[]){
+		JFrame f1; //Create a reference Variable type "JFrame"
+		f1=new JFrame();//Create an Object type "JFrame"
+		f1.setSize(300,300);
+		f1.setDefaultCloseOperation(2);
+		f1.setLocationRelativeTo(null);
+		f1.setTitle("Calculator");
+		f1.setLayout(new FlowLayout());
+		
+		JButton exitButton=new JButton("Exit");
+		exitButton.setFont(new Font("",1,30));
+		
+		f1.add(exitButton);
+		
+		f1.setVisible(true);
+		
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q16 Case I
+==========
+class Box{
+	int length;
+	int width;
+	int height;
+}
+class Demo{
+	public static void main(String arg[]){
+		int[] xr;
+		xr=new int[3];
+		System.out.println(xr);
+		xr[0]=100;
+		System.out.println(xr[0]);
+		Box b1;
+		b1=new Box();
+		System.out.println(b1);
+		b1.length=12;
+		b1.width=5;
+		b1.height=3;
+		System.out.println(b1.length);
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q17 Case II
+===========
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.length=12;
+		b1.width=5;
+		b1.height=3;
+		b1.printVolume();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q18 Case III (Adding a parameterized method)
+============================================
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int l, int w, int h){
+		length=l;
+		width=w;
+		height=h;
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q19 Case IV
+===========
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int l, int w, int h){
+		length=l;
+		width=w;
+		height=h;
+	}
+	public int getVolume(){
+		int volume;
+		volume=length*width*height;
+		return volume;
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		int vol;
+		vol=b1.getVolume();
+		System.out.println("New Volume : "+vol);
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q20 Exercise
+=============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		length=length;
+		width=width;
+		height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		System.out.println("length of b1 : "+b1.length);
+		System.out.println("width  of b1 : "+b1.width);
+		System.out.println("height of b1 : "+b1.height);
+		b1.printVolume();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q21 Case V
+===========
+class MyClass{
+	int a;
+	public void print(){
+		System.out.println(this);
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		MyClass c1=new MyClass();
+		MyClass c2=new MyClass();
+		
+		System.out.println(c1);
+		c1.print();
+		
+		System.out.println(c2);
+		c2.print();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q22 From Q20
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		System.out.println("length of b1 : "+b1.length);
+		System.out.println("width  of b1 : "+b1.width);
+		System.out.println("height of b1 : "+b1.height);
+		b1.printVolume();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q23 Case VI
+===========
+class Box{
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	int width;
+
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	int length;
+}	
+
+/////////////////////////////////////////////////////////////////////////////
+Q24 Case VII
+============
+class Box{
+	int height;
+	int width;
+	int length;
+	
+	System.out.println("hello java"); //Illegal
+	
+	public void myMethod(){
+		System.out.println("hello java"); //Legal
+	}
+}	
+
+/////////////////////////////////////////////////////////////////////////////
+Q25 Case VIII
+=============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=null;
+		b1.length=12;
+		b1.width=5;
+		b1.height=3;
+		b1.printVolume();
+		//b1.x=100;
+		//b1.m();
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q26 Case IX (Passing an Object to a method)
+===========================================
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=new Box();
+		b2.copyValueFrom(b1);
+		b2.printVolume(); //180
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q27 From Q26
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	public void copyValueFrom(Box box){
+		this.length=box.length;
+		this.width=box.width;
+		this.height=box.height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=new Box();
+		b2.copyValueFrom(b1);
+		b2.printVolume(); //180
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q28 From Q27
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	public void setSize(Box box){  //Overloading
+		setSize(box.length,box.width,box.height); 
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=new Box();
+		b2.setSize(b1);
+		b2.printVolume(); //180
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q29 Case X Returning an Object
+==============================
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	public void setSize(Box box){  //Overloading
+		setSize(box.length,box.width,box.height); 
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=b1.getCopy();
+		b2.printVolume(); //180
+		
+		System.out.println(b1==b2); //false
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q30 From Q29 (Wrong)
+====================
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	public void setSize(Box box){  //Overloading
+		setSize(box.length,box.width,box.height); 
+	}
+	public Box getCopy(){
+		return this;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=b1.getCopy();
+		b2.printVolume(); //180
+		
+		System.out.println(b1==b2); //false
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q31 From Q29
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	public void setSize(Box box){  //Overloading
+		setSize(box.length,box.width,box.height); 
+	}
+	public Box getCopy(){
+		Box box=new Box();
+		box.setSize(this); //b1.setSize(this.length,width,height);
+		return box;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		
+		Box b2=b1.getCopy();
+		b2.printVolume(); //180
+		
+		System.out.println(b1==b2); //false
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+						Object Initialization
+///////////////////////////////////////////////////////////////////////////// 
+Q32
+class Box{
+	int length;
+	int width;
+	int height;
+	/*Compiler inserts-->Default Constructor
+	Box(){
+		length=0;	
+		width=0;
+		height=0; 
+	}
+	*/
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box(); //"Box()"-->Calling Constructor
+		System.out.println("length of b1 : "+b1.length);
+		System.out.println("width  of b1 : "+b1.width);
+		System.out.println("height of b1 : "+b1.height);
+		b1.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q33 Case I Default Constructor
+==============================
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(){
+		length=1;	
+		width=1;
+		height=1; 
+		System.out.println("Box()");
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box(); //"Box()"-->Calling Constructor
+		System.out.println("length of b1 : "+b1.length);
+		System.out.println("width  of b1 : "+b1.width);
+		System.out.println("height of b1 : "+b1.height);
+		b1.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q34 Case II Parameterized Constructors
+======================================
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box(12,5,3); //"Box(int,int,int)"-->Calling Constructor
+		System.out.println("length of b1 : "+b1.length); //12
+		System.out.println("width  of b1 : "+b1.width); //5
+		System.out.println("height of b1 : "+b1.height); //3
+		b1.printVolume(); //180
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q35 Case III
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box(12,5,3);
+		b1.printVolume(); 
+		
+		Box b2=new Box(); //Illegal
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q36 Case IV Constructor Overloading
+===================================
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+		System.out.println("Box(int,int,int)");
+	}
+	Box(int length){
+		this.length=length;
+		this.width=length;
+		this.height=length;
+		System.out.println("Box(int)");
+	}
+	Box(){
+		this.length=1;
+		this.width=1;
+		this.height=1;
+		System.out.println("Box()");
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.printVolume();
+		System.out.println("--------------------------");
+		
+		Box b2=new Box(10);
+		b2.printVolume();
+		System.out.println("--------------------------");
+		
+		Box b3=new Box(12,5,3);
+		b3.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q37 Case V
+==========
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+		System.out.println("Box(int,int,int)");
+	}
+	Box(int length){
+		this.length=length;
+		this.width=length;
+		this.height=length;
+		System.out.println("Box(int)");
+	}
+	Box(){
+		this.length=1;
+		this.width=1;
+		this.height=1;
+		System.out.println("Box()");
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.Box(12,5,3); //Illegal
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q38 Case VI
+===========
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+		System.out.println("Box(int,int,int)");
+	}
+	void Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+		System.out.println("Box(int,int,int)");
+	}
+	Box(int length){
+		this.length=length;
+		this.width=length;
+		this.height=length;
+		System.out.println("Box(int)");
+	}
+	Box(){
+		this.length=1;
+		this.width=1;
+		this.height=1;
+		System.out.println("Box()");
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.Box(12,5,3); //"Box(int,int,int) not a Constructor, is a method
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q39 Case VII
+============
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	Box(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+		System.out.println("Box(int,int,int)");
+	}
+	Box(int length){
+		/*this.length=length;
+		this.width=length;
+		this.height=length;*/
+		this(length,length,length); //Box(length,length,length); 
+		System.out.println("Box(int)");
+	}
+	Box(){
+		/*this.length=1;
+		this.width=1;
+		this.height=1;*/
+		this(1);
+		System.out.println("Box()");
+	}
+	
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q40 Case VIII (Declaration values)
+==================================
+class Box{
+	int length=12;
+	int width=5;
+	int height=3;
+	
+	/*Compiler inserts
+	Box(){
+		length=12;
+		width=5;
+		height=3;
+	}
+	*/
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q41 Case IX (Instance blocks)
+=============================
+class Box{
+	int length;
+	int width;
+	int height;
+	
+	{
+		System.out.println("Instance block....");
+		length=12;
+		width=5;
+		height=3;
+	}
+	/*Compiler inserts
+	Box(){
+		System.out.println("Instance block....");
+		length=12;
+		width=5;
+		height=3;
+	}
+	*/
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		b1.printVolume();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q42 Case X (Declaration values vs Instance blocks)
+==================================================
+class Box{
+	int length=100;
+	int height=300;
+	
+	{
+		length=1000;
+		width=2000;
+		height=3000;
+	}
+	int width=200;
+	Box(){
+		length=10000;
+	}
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		this.length=length;
+		this.width=width;
+		this.height=height;
+	}
+}	
+class Demo{
+	public static void main(String arg[]){
+		Box b1=new Box();
+		System.out.println("length : "+b1.length);
+		System.out.println("width  : "+b1.width);
+		System.out.println("height : "+b1.height);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+	Static initialization( Static methods, Static variables, static blocks)
+///////////////////////////////////////////////////////////////////////////// 
+Q43
+class MyClass{
+	int a;
+	int b;
+}
+class Demo{
+	public static void main(String arg[]){
+		MyClass c1=new MyClass();
+		MyClass c2=new MyClass();
+		MyClass c3=new MyClass();
+		
+		c1.a=1;
+		c1.b=2;
+		
+		c2.a=10;
+		c2.b=20;
+		
+		c3.a=100;
+		c3.b=200;
+		
+		System.out.println("C1 : "+c1.a+" "+c1.b);
+		System.out.println("C2 : "+c2.a+" "+c2.b);
+		System.out.println("C3 : "+c3.a+" "+c3.b);
+		
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q44 
+class MyClass{
+	int a; //Instance variable,Object variable
+	static int b; //Class/template variable, static variables
+}
+class Demo{
+	public static void main(String arg[]){
+		MyClass c1=new MyClass();
+		MyClass c2=new MyClass();
+		MyClass c3=new MyClass();
+		
+		c1.a=1;
+		c1.b=2;
+		
+		c2.a=10;
+		c2.b=20;
+		
+		c3.a=100;
+		c3.b=200;
+		
+		System.out.println("C1 : "+c1.a+" "+c1.b); //1 200
+		System.out.println("C2 : "+c2.a+" "+c2.b); //10 200
+		System.out.println("C3 : "+c3.a+" "+c3.b); //100 200
+		
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q45 Exercise
+============
+class MyClass{
+	int a;
+	static int b;
+}
+class Demo{
+	public static void main(String arg[]){
+		//MyClass.a=100; //Illegal
+		MyClass.b=100; //Legal, b is static
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q46
+class MyClass{
+	int a;
+	static int b;
+}
+class Demo{
+	public static void main(String arg[]){
+		//MyClass.a=100; //Illegal
+		MyClass.b=100; //Legal, b is static
+		
+		MyClass c1=null;
+		System.out.println(c1.b); //100
+		System.out.println(c1.a); //NullPointerException
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q47 Exercise 
+============
+class Date{
+	int year;
+	int month;
+	int day;
+	public void setDate(int y,int m, int d){
+		year=y;
+		month=m;
+		day=d;
+	}
+	public void printDate(){
+		System.out.println(year+"-"+month+"-"+day);
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		Date d1=new Date();
+		d1.setDate(2020,8,8);
+		
+		Date d2=new Date();
+		d2.setDate(1992,8,10);
+				
+		d1.printDate(); //2020-8-8
+		d2.printDate(); //1992-8-10
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q48 From Q47
+============
+class Date{
+	static int year;
+	static int month;
+	static int day;
+	public void setDate(int y,int m, int d){
+		year=y;
+		month=m;
+		day=d;
+	}
+	public void printDate(){
+		System.out.println(year+"-"+month+"-"+day);
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		Date d1=new Date();
+		d1.setDate(2020,8,8);
+		
+		Date d2=new Date();
+		d2.setDate(1992,8,10);
+				
+		d1.printDate(); //1992-8-10
+		d2.printDate(); //1992-8-10
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q49 Static Methods
+==================
+class MyClass{
+	int a;
+	static int b;
+	public void instanceMethod(){
+		System.out.println("instance method");
+	}
+	public static void staticMethod(){ //class methods
+		System.out.println("static method");
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		//MyClass.instanceMethod(); //Illegal
+		MyClass.staticMethod(); //Legal
+		
+		MyClass c1=null;
+		c1.staticMethod();
+		//c1.instanceMethod(); //Runtime error[NullPointerException]
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q50 Static Blocks (Template Object)
+===================================
+class MyClass{
+	int a;
+	static int b;
+	static{
+		System.out.println("Static block.....");
+	}
+	public void instanceMethod(){
+		System.out.println("instance method");
+	}
+	public static void staticMethod(){ //class methods
+		System.out.println("static method");
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		MyClass c1=new MyClass();
+		MyClass c2=new MyClass();
+				
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q51
+class MyClass{
+	int a;
+	static int b;
+	static{
+		System.out.println("Static block.....");
+	}
+	{
+		System.out.println("Instance block.....");
+	}
+	public void instanceMethod(){
+		System.out.println("instance method");
+	}
+	public static void staticMethod(){ //class methods
+		System.out.println("static method");
+	}
+}
+class Demo{
+	public static void main(String arg[]){
+		MyClass c1=new MyClass();
+		MyClass c2=new MyClass();
+				
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+				Java Swing Applicatios
+///////////////////////////////////////////////////////////////////////////// 
+Q52
+import javax.swing.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame();
+		f1.setSize(300,300);
+		f1.setTitle("Calculator");
+		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //3
+		f1.setLocationRelativeTo(null);
+		f1.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q53
+import javax.swing.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame();
+		f1.setSize(300,300);
+		f1.setTitle("Calculator");
+		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //3
+		f1.setLocationRelativeTo(null);
+		f1.setVisible(true);
+		
+		JFrame f2=new JFrame();
+		f2.setSize(400,400);
+		f2.setTitle("Calculator2");
+		f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //3
+		f2.setLocationRelativeTo(null);
+		f2.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q54
+import javax.swing.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame();
+		f1.setSize(300,300);
+		f1.setTitle("Calculator");
+		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //2
+		f1.setLocationRelativeTo(null);
+		f1.setVisible(true);
+		
+		JFrame f2=new JFrame();
+		f2.setSize(400,400);
+		f2.setTitle("Calculator2");
+		f2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //2
+		f2.setLocationRelativeTo(null);
+		f2.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q55
+import javax.swing.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame();
+		f1.setSize(300,300);
+		f1.setTitle("Calculator");
+		f1.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); //2
+		f1.setLocationRelativeTo(null);
+		f1.setVisible(true);
+		
+		try{Thread.sleep(5000);}catch(Exception ex){}
+		f1.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+		Inheritance 
+///////////////////////////////////////////////////////////////////////////// 
+Q56
+import javax.swing.*;
+class Demo{
+	public static void main(String args[]){
+		Calculator c1=new Calculator();
+		c1.setSize(300,300);
+		c1.setTitle("Calculator");
+		c1.setDefaultCloseOperation(Calculator.EXIT_ON_CLOSE); 
+		c1.setLocationRelativeTo(null);
+		c1.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q57
+import javax.swing.*;
+class Calculator{
+	//attributes declarations
+	
+	//method declarations 
+}
+class Demo{
+	public static void main(String args[]){
+		Calculator c1=new Calculator();
+		c1.setSize(300,300);
+		c1.setTitle("Calculator");
+		c1.setDefaultCloseOperation(Calculator.EXIT_ON_CLOSE); 
+		c1.setLocationRelativeTo(null);
+		c1.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q58
+import javax.swing.*;
+class Calculator extends JFrame{ //Inheritance
+	
+}
+class Demo{
+	public static void main(String args[]){
+		Calculator c1=new Calculator();
+		c1.setSize(300,300);
+		c1.setTitle("Calculator");
+		c1.setDefaultCloseOperation(Calculator.EXIT_ON_CLOSE); 
+		c1.setLocationRelativeTo(null);
+		c1.setVisible(true);
+	}
+}
+//JFrame->Superclass
+//Calculator->Subclass
+
+///////////////////////////////////////////////////////////////////////////// 
+Q59
+import javax.swing.*;
+class Calculator extends JFrame{ //Inheritance
+	Calculator(){
+		setSize(300,300);
+		setTitle("Calculator");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		Calculator c1=new Calculator();
+		c1.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q60
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		
+		add(exitButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q61
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	private JTextField displayText;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		add(exitButton);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,30));
+		add(displayText);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Layout Manager
+///////////////////////////////////////////////////////////////////////////// 
+Q62  BorderLayout
+=================
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	private JTextField displayText;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		//setLayout(new BorderLayout()); //Default of JFrame->BorderLayout
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		add("South",exitButton);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,30));
+		add("North",displayText);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q63 Exercise
+============
+
+///////////////////////////////////////////////////////////////////////////// 
+Q64
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton northButton;
+	private JButton southButton;
+	private JButton eastButton;
+	private JButton westButton;
+	private JButton centerButton;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		//setLayout(new BorderLayout()); //Default of JFrame->BorderLayout
+		
+		northButton=new JButton("North");
+		northButton.setFont(new Font("",1,25));
+		add("North",northButton);
+		
+		southButton=new JButton("South");
+		southButton.setFont(new Font("",1,25));
+		add("South",southButton);
+		
+		westButton=new JButton("West");
+		westButton.setFont(new Font("",1,25));
+		add("West",westButton);
+		
+		eastButton=new JButton("East");
+		eastButton.setFont(new Font("",1,25));
+		add("East",eastButton);
+		
+		centerButton=new JButton("Center");
+		centerButton.setFont(new Font("",1,25));
+		add("Center",centerButton);
+		
+		pack();
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q65 FlowLayout
+==============
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton northButton;
+	private JButton southButton;
+	private JButton eastButton;
+	private JButton westButton;
+	private JButton centerButton;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		northButton=new JButton("North");
+		northButton.setFont(new Font("",1,25));
+		add(northButton);
+		
+		southButton=new JButton("South");
+		southButton.setFont(new Font("",1,25));
+		add(southButton);
+		
+		westButton=new JButton("West");
+		westButton.setFont(new Font("",1,25));
+		add(westButton);
+		
+		eastButton=new JButton("East");
+		eastButton.setFont(new Font("",1,25));
+		add(eastButton);
+		
+		centerButton=new JButton("Center");
+		centerButton.setFont(new Font("",1,25));
+		add(centerButton);
+				
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q66 Left Alignment
+==================
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton northButton;
+	private JButton southButton;
+	private JButton eastButton;
+	private JButton westButton;
+	private JButton centerButton;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		FlowLayout f1=new FlowLayout();
+		f1.setAlignment(FlowLayout.LEFT);
+		setLayout(f1);
+		
+		northButton=new JButton("North");
+		northButton.setFont(new Font("",1,25));
+		add(northButton);
+		
+		southButton=new JButton("South");
+		southButton.setFont(new Font("",1,25));
+		add(southButton);
+		
+		westButton=new JButton("West");
+		westButton.setFont(new Font("",1,25));
+		add(westButton);
+		
+		eastButton=new JButton("East");
+		eastButton.setFont(new Font("",1,25));
+		add(eastButton);
+		
+		centerButton=new JButton("Center");
+		centerButton.setFont(new Font("",1,25));
+		add(centerButton);
+				
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q67 Right Alignment
+===================
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton northButton;
+	private JButton southButton;
+	private JButton eastButton;
+	private JButton westButton;
+	private JButton centerButton;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		
+		setLayout(new FlowLayout(FlowLayout.RIGHT));
+		
+		northButton=new JButton("North");
+		northButton.setFont(new Font("",1,25));
+		add(northButton);
+		
+		southButton=new JButton("South");
+		southButton.setFont(new Font("",1,25));
+		add(southButton);
+		
+		westButton=new JButton("West");
+		westButton.setFont(new Font("",1,25));
+		add(westButton);
+		
+		eastButton=new JButton("East");
+		eastButton.setFont(new Font("",1,25));
+		add(eastButton);
+		
+		centerButton=new JButton("Center");
+		centerButton.setFont(new Font("",1,25));
+		add(centerButton);
+				
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q68 BorderLayout vs FlowLayout
+===============================
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JTextField text;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		text=new JTextField(10);
+		text.setFont(new Font("",1,20));
+		add(text);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+//-----------------------------------------------------
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JTextField text;
+	
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
+		
+		text=new JTextField(10);
+		text.setFont(new Font("",1,20));
+		add("North",text);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q69 GridLayout 
+===============
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton button1;
+	private JButton button2;
+	private JButton button3;
+	private JButton button4;
+		
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new GridLayout(2,2));
+		
+		button1=new JButton("1");
+		button1.setFont(new Font("",1,20));
+		add(button1);
+		button2=new JButton("2");
+		button2.setFont(new Font("",1,20));
+		add(button2);
+		button3=new JButton("3");
+		button3.setFont(new Font("",1,20));
+		add(button3);
+		button4=new JButton("4");
+		button4.setFont(new Font("",1,20));
+		add(button4);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q70 Exercise
+============
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton bt0;
+	private JButton bt1;
+	private JButton bt2;
+	private JButton bt3;
+	private JButton bt4;
+	private JButton bt5;
+	private JButton bt6;
+	private JButton bt7;
+	private JButton bt8;
+	private JButton bt9;
+	private JButton btAdd;
+	private JButton btSub;
+	private JButton btMul;
+	private JButton btDiv;
+	private JButton btDot;
+	private JButton btEquals;
+		
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new GridLayout(4,4));
+		
+		bt7=new JButton("7");
+		bt7.setFont(new Font("",1,20));
+		add(bt7);
+		
+		bt8=new JButton("8");
+		bt8.setFont(new Font("",1,20));
+		add(bt8);
+		
+		bt9=new JButton("9");
+		bt9.setFont(new Font("",1,20));
+		add(bt9);
+		
+		btMul=new JButton("x");
+		btMul.setFont(new Font("",1,20));
+		add(btMul);
+		
+		bt4=new JButton("4");
+		bt4.setFont(new Font("",1,20));
+		add(bt4);
+		
+		bt5=new JButton("5");
+		bt5.setFont(new Font("",1,20));
+		add(bt5);
+		
+		bt6=new JButton("6");
+		bt6.setFont(new Font("",1,20));
+		add(bt6);
+		
+		btDiv=new JButton("/");
+		btDiv.setFont(new Font("",1,20));
+		add(btDiv);
+		
+		bt1=new JButton("1");
+		bt1.setFont(new Font("",1,20));
+		add(bt1);
+		
+		bt2=new JButton("2");
+		bt2.setFont(new Font("",1,20));
+		add(bt2);
+		
+		bt3=new JButton("3");
+		bt3.setFont(new Font("",1,20));
+		add(bt3);
+		
+		btAdd=new JButton("+");
+		btAdd.setFont(new Font("",1,20));
+		add(btAdd);
+		
+		bt0=new JButton("0");
+		bt0.setFont(new Font("",1,20));
+		add(bt0);
+		
+		btDot=new JButton(".");
+		btDot.setFont(new Font("",1,20));
+		add(btDot);
+		
+		btEquals=new JButton("=");
+		btEquals.setFont(new Font("",1,20));
+		add(btEquals);
+		
+		btSub=new JButton("-");
+		btSub.setFont(new Font("",1,20));
+		add(btSub);
+		
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q71
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton buttonArray[];
+		
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new GridLayout(4,4));
+		
+		String[] buttonName={"7","8","9","x","4","5","6","/","1","2","3","+","0",".","=","-"};
+		buttonArray=new JButton[16];
+		for (int i = 0; i < buttonArray.length; i++){
+			buttonArray[i]=new JButton(buttonName[i]);
+			buttonArray[i].setFont(new Font("",1,20));
+			add(buttonArray[i]);
+		}
+		
+		
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q72 Event Handling
+==================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		
+		exitButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				System.out.println("Exited...");
+				System.exit(0);
+			}
+		});
+		
+		add(exitButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q73 JPanel
+==========
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton button1;
+	private JButton button2;
+	private JButton button3;
+	private JButton button4;
+	private JTextField textField;
+		
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
+		
+		textField=new JTextField();
+		textField.setFont(new Font("",1,20));
+		add("North",textField);
+		
+		JPanel buttonPanel=new JPanel();
+		buttonPanel.setLayout(new GridLayout(2,2));
+				
+		button1=new JButton("1");
+		button1.setFont(new Font("",1,20));
+		buttonPanel.add(button1);
+		
+		button2=new JButton("2");
+		button2.setFont(new Font("",1,20));
+		buttonPanel.add(button2);
+		
+		button3=new JButton("3");
+		button3.setFont(new Font("",1,20));
+		buttonPanel.add(button3);
+		
+		button4=new JButton("4");
+		button4.setFont(new Font("",1,20));
+		buttonPanel.add(button4);
+		
+		add("Center",buttonPanel);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q74 Exercise
+=============
+import javax.swing.*;
+import java.awt.*;
+class MyFrame extends JFrame{
+	private JButton bt0;
+	private JButton bt1;
+	private JButton bt2;
+	private JButton bt3;
+	private JButton bt4;
+	private JButton bt5;
+	private JButton bt6;
+	private JButton bt7;
+	private JButton bt8;
+	private JButton bt9;
+	private JButton btAdd;
+	private JButton btSub;
+	private JButton btMul;
+	private JButton btDiv;
+	private JButton btDot;
+	private JButton btEquals;
+	private JTextField displayText;
+		
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+				
+		displayText=new JTextField();
+		displayText.setFont(new Font("",1,20));
+		add("North",displayText);
+		
+		JPanel buttonPanel=new JPanel(new GridLayout(4,4));
+		bt7=new JButton("7");
+		bt7.setFont(new Font("",1,20));
+		buttonPanel.add(bt7);
+		
+		bt8=new JButton("8");
+		bt8.setFont(new Font("",1,20));
+		buttonPanel.add(bt8);
+		
+		bt9=new JButton("9");
+		bt9.setFont(new Font("",1,20));
+		buttonPanel.add(bt9);
+		
+		btMul=new JButton("x");
+		btMul.setFont(new Font("",1,20));
+		buttonPanel.add(btMul);
+		
+		bt4=new JButton("4");
+		bt4.setFont(new Font("",1,20));
+		buttonPanel.add(bt4);
+		
+		bt5=new JButton("5");
+		bt5.setFont(new Font("",1,20));
+		buttonPanel.add(bt5);
+		
+		bt6=new JButton("6");
+		bt6.setFont(new Font("",1,20));
+		buttonPanel.add(bt6);
+		
+		btDiv=new JButton("/");
+		btDiv.setFont(new Font("",1,20));
+		buttonPanel.add(btDiv);
+		
+		bt1=new JButton("1");
+		bt1.setFont(new Font("",1,20));
+		buttonPanel.add(bt1);
+		
+		bt2=new JButton("2");
+		bt2.setFont(new Font("",1,20));
+		buttonPanel.add(bt2);
+		
+		bt3=new JButton("3");
+		bt3.setFont(new Font("",1,20));
+		buttonPanel.add(bt3);
+		
+		btAdd=new JButton("+");
+		btAdd.setFont(new Font("",1,20));
+		buttonPanel.add(btAdd);
+		
+		bt0=new JButton("0");
+		bt0.setFont(new Font("",1,20));
+		buttonPanel.add(bt0);
+		
+		btDot=new JButton(".");
+		btDot.setFont(new Font("",1,20));
+		buttonPanel.add(btDot);
+		
+		btEquals=new JButton("=");
+		btEquals.setFont(new Font("",1,20));
+		buttonPanel.add(btEquals);
+		
+		btSub=new JButton("-");
+		btSub.setFont(new Font("",1,20));
+		buttonPanel.add(btSub);
+		
+		add("Center",buttonPanel);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q75
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+	private JButton bt0;
+	private JButton bt1;
+	private JButton bt2;
+	private JButton bt3;
+	private JButton bt4;
+	private JButton bt5;
+	private JButton bt6;
+	private JButton bt7;
+	private JButton bt8;
+	private JButton bt9;
+	private JButton btAdd;
+	private JButton btSub;
+	private JButton btMul;
+	private JButton btDiv;
+	private JButton btDot;
+	private JButton btEquals;
+	private JTextField displayText;
+	private int num1;
+	private int num2;
+	private int result;
+	private char op;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+				
+		displayText=new JTextField();
+		displayText.setFont(new Font("",1,20));
+		displayText.setHorizontalAlignment(JTextField.RIGHT);
+		add("North",displayText);
+		
+		JPanel buttonPanel=new JPanel(new GridLayout(4,4));
+		bt7=new JButton("7");
+		bt7.setFont(new Font("",1,20));
+		bt7.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				//displayText.setText(displayText.getText()+bt7.getText());
+				String text=displayText.getText();
+				displayText.setText(text+bt7.getText());
+			}
+		});
+		buttonPanel.add(bt7);
+		
+		bt8=new JButton("8");
+		bt8.setFont(new Font("",1,20));
+		bt8.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				displayText.setText(displayText.getText()+bt8.getText());
+			}
+		});		
+		buttonPanel.add(bt8);
+		
+		bt9=new JButton("9");
+		bt9.setFont(new Font("",1,20));
+		buttonPanel.add(bt9);
+		
+		btMul=new JButton("x");
+		btMul.setFont(new Font("",1,20));
+		btMul.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String sNum=displayText.getText();
+				num1=Integer.parseInt(sNum);
+				displayText.setText("");
+				op='*'; //x
+			}
+		});
+		buttonPanel.add(btMul);
+		
+		bt4=new JButton("4");
+		bt4.setFont(new Font("",1,20));
+		buttonPanel.add(bt4);
+		
+		bt5=new JButton("5");
+		bt5.setFont(new Font("",1,20));
+		buttonPanel.add(bt5);
+		
+		bt6=new JButton("6");
+		bt6.setFont(new Font("",1,20));
+		buttonPanel.add(bt6);
+		
+		btDiv=new JButton("/");
+		btDiv.setFont(new Font("",1,20));
+		btDiv.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String sNum=displayText.getText();
+				num1=Integer.parseInt(sNum);
+				displayText.setText("");
+				op='/';
+			}
+		});		
+		buttonPanel.add(btDiv);
+		
+		bt1=new JButton("1");
+		bt1.setFont(new Font("",1,20));
+		buttonPanel.add(bt1);
+		
+		bt2=new JButton("2");
+		bt2.setFont(new Font("",1,20));
+		buttonPanel.add(bt2);
+		
+		bt3=new JButton("3");
+		bt3.setFont(new Font("",1,20));
+		buttonPanel.add(bt3);
+		
+		btAdd=new JButton("+");
+		btAdd.setFont(new Font("",1,20));
+		buttonPanel.add(btAdd);
+		
+		bt0=new JButton("0");
+		bt0.setFont(new Font("",1,20));
+		buttonPanel.add(bt0);
+		
+		btDot=new JButton(".");
+		btDot.setFont(new Font("",1,20));
+		buttonPanel.add(btDot);
+		
+		btEquals=new JButton("=");
+		btEquals.setFont(new Font("",1,20));
+		btEquals.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				num2=Integer.parseInt(displayText.getText());
+				switch(op){
+					case '*' : result=num1*num2;break;
+					case '/' : result=num1/num2;break;
+				}
+				displayText.setText(Integer.toString(result));
+			} 
+		});
+		buttonPanel.add(btEquals);
+		
+		btSub=new JButton("-");
+		btSub.setFont(new Font("",1,20));
+		buttonPanel.add(btSub);
+		
+		add("Center",buttonPanel);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+						AddCustomerForm
+///////////////////////////////////////////////////////////////////////////// 
+Q76 Step i
+==========
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class AddCustomerForm extends JFrame{
+	private JLabel idLabel;
+	private JLabel nameLabel;
+	private JLabel addressLabel;
+	private JLabel salaryLabel;
+	
+	private JTextField idText;
+	private JTextField nameText;
+	private JTextField addressText;
+	private JTextField salaryText;
+	
+	private JButton addButton;
+	private JButton cancelButton;
+	
+	AddCustomerForm(){
+		setSize(400,300);
+		setTitle("Add Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new AddCustomerForm().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q77 Step II
+===========
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class AddCustomerForm extends JFrame{
+	private JLabel idLabel;
+	private JLabel nameLabel;
+	private JLabel addressLabel;
+	private JLabel salaryLabel;
+	
+	private JTextField idText;
+	private JTextField nameText;
+	private JTextField addressText;
+	private JTextField salaryText;
+	
+	private JButton addButton;
+	private JButton cancelButton;
+	
+	AddCustomerForm(){
+		setSize(400,300);
+		setTitle("Add Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel titleLabel=new JLabel("Add Customer Form");		
+		titleLabel.setHorizontalAlignment(JTextField.CENTER);
+		titleLabel.setFont(new Font("",1,30));
+		add("North",titleLabel);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new AddCustomerForm().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q78 Step III
+============
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class AddCustomerForm extends JFrame{
+	private JLabel idLabel;
+	private JLabel nameLabel;
+	private JLabel addressLabel;
+	private JLabel salaryLabel;
+	
+	private JTextField idText;
+	private JTextField nameText;
+	private JTextField addressText;
+	private JTextField salaryText;
+	
+	private JButton addButton;
+	private JButton cancelButton;
+	
+	AddCustomerForm(){
+		setSize(400,300);
+		setTitle("Add Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel titleLabel=new JLabel("Add Customer Form");		
+		titleLabel.setHorizontalAlignment(JTextField.CENTER);
+		titleLabel.setFont(new Font("",1,30));
+		add("North",titleLabel);
+		
+		JPanel buttonPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		addButton=new JButton("Add Customer");
+		addButton.setFont(new Font("",1,20));
+		buttonPanel.add(addButton);
+		
+		cancelButton=new JButton("Cancel");
+		cancelButton.setFont(new Font("",1,20));
+		buttonPanel.add(cancelButton);
+		
+		add("South",buttonPanel);
+		
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new AddCustomerForm().setVisible(true);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class AddCustomerForm extends JFrame{
+	private JLabel idLabel;
+	private JLabel nameLabel;
+	private JLabel addressLabel;
+	private JLabel salaryLabel;
+	
+	private JTextField idText;
+	private JTextField nameText;
+	private JTextField addressText;
+	private JTextField salaryText;
+	
+	private JButton addButton;
+	private JButton cancelButton;
+	
+	AddCustomerForm(){
+		
+		setSize(400,300);
+		setTitle("Add Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel titleLabel=new JLabel("Add Customer Form");
+		titleLabel.setHorizontalAlignment(JTextField.CENTER);
+		titleLabel.setFont(new Font("",1,30));
+		add("North",titleLabel);
+		
+		JPanel buttonPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		addButton=new JButton("Add Customer");
+		addButton.setFont(new Font("",1,20));
+		buttonPanel.add(addButton);
+		
+		cancelButton=new JButton("Cancel");
+		cancelButton.setFont(new Font("",1,20));
+		buttonPanel.add(cancelButton);
+		add("South",buttonPanel);
+		
+		JPanel lbPanel=new JPanel(new GridLayout(4,1));
+		JLabel idLabel=new JLabel("ID");
+		idLabel.setHorizontalAlignment(JTextField.LEFT);
+		idLabel.setFont(new Font("",1,20));
+		lbPanel.add(idLabel);
+		
+		JLabel nameLabel=new JLabel("Name");
+		nameLabel.setHorizontalAlignment(JTextField.LEFT);
+		nameLabel.setFont(new Font("",1,20));
+		lbPanel.add(nameLabel);
+		
+		JLabel addressLabel=new JLabel("Address");
+		addressLabel.setHorizontalAlignment(JTextField.LEFT);
+		addressLabel.setFont(new Font("",1,20));
+		lbPanel.add(addressLabel);
+		
+		JLabel salaryLabel=new JLabel("Salary");
+		salaryLabel.setHorizontalAlignment(JTextField.LEFT);
+		salaryLabel.setFont(new Font("",1,20));
+		lbPanel.add(salaryLabel);
+		add("West",lbPanel);
+		
+		JPanel tfPanel = new JPanel(new GridLayout(4,1));
+		JPanel idPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JTextField idText = new JTextField(5);
+		idText.setFont(new Font("",1,20));
+		idPanel.add(idText);
+		tfPanel.add(idPanel);
+		
+		JPanel namePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JTextField nameText = new JTextField(10);
+		nameText.setFont(new Font("",1,20));
+		namePanel.add(nameText);
+		tfPanel.add(namePanel);
+		
+		JPanel addressPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JTextField addressText = new JTextField(25);
+		addressText.setFont(new Font("",1,20));
+		addressPanel.add(addressText);
+		tfPanel.add(addressPanel);
+		
+		JPanel salaryPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JTextField salaryText = new JTextField(10);
+		salaryText.setFont(new Font("",1,20));
+		salaryPanel.add(salaryText);
+		tfPanel.add(salaryPanel);
+	
+		add("Center",tfPanel);
+	}
+} 
+class Demo1{
+	public static void main(String args[]){
+		new AddCustomerForm().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+				Create a Notepad
+///////////////////////////////////////////////////////////////////////////// 
+Q79 Step I
+==========
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class Notepad extends JFrame{
+	Notepad(){
+		setSize(600,400);
+		setTitle("Notepad");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new Notepad().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q80 Step II
+===========
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class Notepad extends JFrame{
+	private JTextArea textArea;
+	Notepad(){
+		setSize(600,400);
+		setTitle("Notepad");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		textArea=new JTextArea();
+		textArea.setFont(new Font("",1,20));
+		add("Center",textArea);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new Notepad().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q81 Step III
+============
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class Notepad extends JFrame{
+	private JTextArea textArea;
+	Notepad(){
+		setSize(600,400);
+		setTitle("Notepad");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		textArea=new JTextArea();
+		textArea.setFont(new Font("",1,20));
+		JScrollPane textPane=new JScrollPane(textArea);
+		add("Center",textPane);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new Notepad().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q82 Step IV
+===========
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class Notepad extends JFrame{
+	private JTextArea textArea;
+	private JMenuBar mainMenuBar;
+	
+	private JMenu fileMenu;
+	private JMenu editMenu;
+	private JMenu viewMenu;
+	
+	private JMenuItem newMenuItem;
+	private JMenuItem newWindowMenuItem;
+	private JMenuItem openMenuItem;
+	private JMenuItem saveMenuItem;
+	
+	Notepad(){
+		setSize(600,400);
+		setTitle("Notepad");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		textArea=new JTextArea();
+		textArea.setFont(new Font("",1,20));
+		JScrollPane textPane=new JScrollPane(textArea);
+		add("Center",textPane);
+		
+		//-----------------------------------------
+		mainMenuBar=new JMenuBar();
+		
+		fileMenu=new JMenu("File");
+		
+		newMenuItem=new JMenuItem("New");
+		fileMenu.add(newMenuItem);
+		
+		mainMenuBar.add(fileMenu);
+		
+		setJMenuBar(mainMenuBar);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new Notepad().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q83 Step V
+===========
+
+///////////////////////////////////////////////////////////////////////////// 
+					Working with JTable
+///////////////////////////////////////////////////////////////////////////// 
+Q84
+import javax.swing.*;
+import javax.swing.table.*;
+import java.awt.*;
+import java.awt.event.*;
+class ViewCustomerForm extends JFrame{
+	private JTable customerTable;
+	private DefaultTableModel dtm;
+	ViewCustomerForm(){
+		setSize(600,400);
+		setTitle("View Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel titleLabel=new JLabel("View Customer Form");		
+		titleLabel.setHorizontalAlignment(JTextField.CENTER);
+		titleLabel.setFont(new Font("",1,30));
+		add("North",titleLabel);
+		
+		String[] columnName={"Customer ID", "Name","Address","Salary"};
+		dtm=new DefaultTableModel(columnName,0); //0-->Row Count
+		customerTable=new JTable(dtm);
+		
+		JScrollPane tablePane=new JScrollPane(customerTable);
+		
+		add("Center",tablePane);
+		
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new ViewCustomerForm().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q85
+import javax.swing.*;
+import javax.swing.table.*;
+import java.awt.*;
+import java.awt.event.*;
+class ViewCustomerForm extends JFrame{
+	private JTable customerTable;
+	private DefaultTableModel dtm;
+	
+	private JButton addButton;
+	ViewCustomerForm(){
+		setSize(600,400);
+		setTitle("View Customer Form");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel titleLabel=new JLabel("View Customer Form");		
+		titleLabel.setHorizontalAlignment(JTextField.CENTER);
+		titleLabel.setFont(new Font("",1,30));
+		add("North",titleLabel);
+		
+		String[] columnName={"Customer ID", "Name","Address","Salary"};
+		dtm=new DefaultTableModel(columnName,0); //0-->Row Count
+		customerTable=new JTable(dtm);
+		
+		JScrollPane tablePane=new JScrollPane(customerTable);
+		add("Center",tablePane);
+		
+		JPanel buttonPanel=new JPanel(new FlowLayout(FlowLayout.CENTER));
+		addButton=new JButton("Add Customer");
+		addButton.setFont(new Font("",1,20)); 
+		addButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				//Read Customer Id
+				//Read name;
+				//read address
+				//read salary
+				Object[] rowData={"C001","Danapala","Galle",45000};
+				dtm.addRow(rowData);
+			}
+		});
+		buttonPanel.add(addButton);
+		
+		add("South",buttonPanel);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new ViewCustomerForm().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+		WaterTank
+///////////////////////////////////////////////////////////////////////////// 
+Q86 Step I
+==========
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class AlarmWindow extends JFrame{
+	private JLabel alarmLabel;
+	
+	AlarmWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Alarm Window");
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("ON/OFF");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}	
+	public void operateAlarm(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "ON":"OFF");
+	}
+}
+class DisplayWindow extends JFrame{
+	private JTextField displayText;
+	private JLabel label;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Display Window");
+		setLayout(new FlowLayout());
+		
+		label=new JLabel("      Water Level        ");
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(new Font("",1,25));
+		add(label);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,25));
+		add(displayText);
+		setVisible(true);
+	}	
+	public void displayWaterLevel(int waterLevel){
+		displayText.setText(waterLevel+"");
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	
+	private AlarmWindow alarmWindow;
+	private DisplayWindow displayWindow;
+	
+	WaterTank(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Water Tank");
+		setLayout(new FlowLayout());
+		
+		alarmWindow=new AlarmWindow();
+		displayWindow=new DisplayWindow();
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0,200,100);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				int waterLevel=waterLevelSlider.getValue();
+				alarmWindow.operateAlarm(waterLevel);
+				displayWindow.displayWaterLevel(waterLevel);
+			}
+		});
+		add(waterLevelSlider);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new WaterTank().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q87 Step II (Adding a Splitter Window)
+======================================
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class AlarmWindow extends JFrame{
+	private JLabel alarmLabel;
+	
+	AlarmWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Alarm Window");
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("ON/OFF");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}	
+	public void operateAlarm(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "ON":"OFF");
+	}
+}
+class SplitterWindow extends JFrame{
+	private JLabel splitterLabel;
+	
+	SplitterWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Splitter Window");
+		setLayout(new FlowLayout());
+		
+		splitterLabel=new JLabel("ON/OFF");
+		splitterLabel.setFont(new Font("",1,25));
+		add(splitterLabel);
+		setVisible(true);
+	}	
+	public void split(int waterLevel){
+		splitterLabel.setText(waterLevel>=150 ? "Splitter ON":"Spltter OFF");
+	}
+}
+class DisplayWindow extends JFrame{
+	private JTextField displayText;
+	private JLabel label;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Display Window");
+		setLayout(new FlowLayout());
+		
+		label=new JLabel("      Water Level        ");
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(new Font("",1,25));
+		add(label);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,25));
+		add(displayText);
+		setVisible(true);
+	}	
+	public void displayWaterLevel(int waterLevel){
+		displayText.setText(waterLevel+"");
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	
+	private AlarmWindow alarmWindow;
+	private DisplayWindow displayWindow;
+	private SplitterWindow splitterWindow;
+	
+	WaterTank(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Water Tank");
+		setLayout(new FlowLayout());
+		
+		alarmWindow=new AlarmWindow();
+		displayWindow=new DisplayWindow();
+		splitterWindow=new SplitterWindow();
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0,200,100);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				int waterLevel=waterLevelSlider.getValue();
+				alarmWindow.operateAlarm(waterLevel);
+				displayWindow.displayWaterLevel(waterLevel);
+				splitterWindow.split(waterLevel);
+			}
+		});
+		add(waterLevelSlider);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new WaterTank().setVisible(true);
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////  Step 
+Q88 Step III (Exercise)
+=======================
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class AlarmWindow extends JFrame{
+	private JLabel alarmLabel;
+	
+	AlarmWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Alarm Window");
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("ON/OFF");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}	
+	public void operateAlarm(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "ON":"OFF");
+	}
+}
+class SplitterWindow extends JFrame{
+	private JLabel splitterLabel;
+	
+	SplitterWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Splitter Window");
+		setLayout(new FlowLayout());
+		
+		splitterLabel=new JLabel("ON/OFF");
+		splitterLabel.setFont(new Font("",1,25));
+		add(splitterLabel);
+		setVisible(true);
+	}	
+	public void split(int waterLevel){
+		splitterLabel.setText(waterLevel>=150 ? "Splitter ON":"Spltter OFF");
+	}
+}
+class DisplayWindow extends JFrame{
+	private JTextField displayText;
+	private JLabel label;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Display Window");
+		setLayout(new FlowLayout());
+		
+		label=new JLabel("      Water Level        ");
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(new Font("",1,25));
+		add(label);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,25));
+		add(displayText);
+		setVisible(true);
+	}	
+	public void displayWaterLevel(int waterLevel){
+		displayText.setText(waterLevel+"");
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	
+	private AlarmWindow alarmWindow;
+	private DisplayWindow displayWindow;
+	private SplitterWindow splitterWindow;
+	
+	WaterTank(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Water Tank");
+		setLayout(new FlowLayout());
+		
+		alarmWindow=new AlarmWindow();
+		displayWindow=new DisplayWindow();
+		splitterWindow=new SplitterWindow();
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0,200,100);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				int waterLevel=waterLevelSlider.getValue();
+				alarmWindow.operateAlarm(waterLevel);
+				displayWindow.displayWaterLevel(waterLevel);
+				splitterWindow.split(waterLevel);
+			}
+		});
+		add(waterLevelSlider);
+		
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		WaterTank waterTank=new WaterTank();
+		waterTank.addAlarmWindow(new AlarmWindow());
+		waterTank.addDisplaywindow(new DisplayWindow());
+		waterTank.addSplitterWindow(new SplitterWindow());
+		waterTank.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q89 From Q88
+============
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class AlarmWindow extends JFrame{
+	private JLabel alarmLabel;
+	
+	AlarmWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Alarm Window");
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("ON/OFF");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}	
+	public void operateAlarm(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "ON":"OFF");
+	}
+}
+class SplitterWindow extends JFrame{
+	private JLabel splitterLabel;
+	
+	SplitterWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Splitter Window");
+		setLayout(new FlowLayout());
+		
+		splitterLabel=new JLabel("ON/OFF");
+		splitterLabel.setFont(new Font("",1,25));
+		add(splitterLabel);
+		setVisible(true);
+	}	
+	public void split(int waterLevel){
+		splitterLabel.setText(waterLevel>=150 ? "Splitter ON":"Spltter OFF");
+	}
+}
+class DisplayWindow extends JFrame{
+	private JTextField displayText;
+	private JLabel label;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Display Window");
+		setLayout(new FlowLayout());
+		
+		label=new JLabel("      Water Level        ");
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(new Font("",1,25));
+		add(label);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,25));
+		add(displayText);
+		setVisible(true);
+	}	
+	public void displayWaterLevel(int waterLevel){
+		displayText.setText(waterLevel+"");
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	
+	private AlarmWindow alarmWindow;
+	private DisplayWindow displayWindow;
+	private SplitterWindow splitterWindow;
+	
+	WaterTank(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Water Tank");
+		setLayout(new FlowLayout());
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0,200,100);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				int waterLevel=waterLevelSlider.getValue();
+				alarmWindow.operateAlarm(waterLevel);
+				displayWindow.displayWaterLevel(waterLevel);
+				splitterWindow.split(waterLevel);
+			}
+		});
+		add(waterLevelSlider);
+		
+	}	
+	public void addAlarmWindow(AlarmWindow alarmWindow){
+		this.alarmWindow=alarmWindow;
+	}
+	public void addDisplaywindow(DisplayWindow displayWindow){
+		this.displayWindow=displayWindow;
+	}
+	public void addSplitterWindow(SplitterWindow splitterWindow){
+		this.splitterWindow=splitterWindow;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		WaterTank waterTank=new WaterTank();
+		waterTank.addAlarmWindow(new AlarmWindow());
+		waterTank.addDisplaywindow(new DisplayWindow());
+		waterTank.addSplitterWindow(new SplitterWindow());
+		waterTank.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q90 Step IV (Exercise)
+======================
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class AlarmWindow extends JFrame{
+	private JLabel alarmLabel;
+	
+	AlarmWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Alarm Window");
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("ON/OFF");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}	
+	public void operateAlarm(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "ON":"OFF");
+	}
+}
+class SplitterWindow extends JFrame{
+	private JLabel splitterLabel;
+	
+	SplitterWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Splitter Window");
+		setLayout(new FlowLayout());
+		
+		splitterLabel=new JLabel("ON/OFF");
+		splitterLabel.setFont(new Font("",1,25));
+		add(splitterLabel);
+		setVisible(true);
+	}	
+	public void split(int waterLevel){
+		splitterLabel.setText(waterLevel>=150 ? "Splitter ON":"Spltter OFF");
+	}
+}
+class DisplayWindow extends JFrame{
+	private JTextField displayText;
+	private JLabel label;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Display Window");
+		setLayout(new FlowLayout());
+		
+		label=new JLabel("      Water Level        ");
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setFont(new Font("",1,25));
+		add(label);
+		
+		displayText=new JTextField(10);
+		displayText.setFont(new Font("",1,25));
+		add(displayText);
+		setVisible(true);
+	}	
+	public void displayWaterLevel(int waterLevel){
+		displayText.setText(waterLevel+"");
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	
+	private WaterLevelController waterLevelController;
+	
+	WaterTank(WaterLevelController waterLevelController){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Water Tank");
+		setLayout(new FlowLayout());
+		
+		this.waterLevelController=waterLevelController;
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0,200,100);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				int waterLevel=waterLevelSlider.getValue();
+				waterLevelController.setWaterLevel(waterLevel);
+			}
+		});
+		add(waterLevelSlider);
+		
+	}	
+
+}
+
+class WaterLevelController{
+	private int waterLevel;
+	private AlarmWindow alarmWindow;
+	private DisplayWindow displayWindow;
+	private SplitterWindow splitterWindow;
+	
+	public void addAlarmWindow(AlarmWindow alarmWindow){
+		this.alarmWindow=alarmWindow;
+	}
+	public void addDisplaywindow(DisplayWindow displayWindow){
+		this.displayWindow=displayWindow;
+	}
+	public void addSplitterWindow(SplitterWindow splitterWindow){
+		this.splitterWindow=splitterWindow;
+	}
+	public void setWaterLevel(int waterLevel){
+		if(this.waterLevel!=waterLevel){
+			this.waterLevel=waterLevel;
+			alarmWindow.operateAlarm(waterLevel);
+			displayWindow.displayWaterLevel(waterLevel);
+			splitterWindow.split(waterLevel);
+		}
+	}
+	
+}
+
+class Demo{
+	public static void main(String args[]){
+		WaterLevelController waterLevelController=new WaterLevelController();
+		waterLevelController.addAlarmWindow(new AlarmWindow());
+		waterLevelController.addDisplaywindow(new DisplayWindow());
+		waterLevelController.addSplitterWindow(new SplitterWindow());
+		
+		new WaterTank(waterLevelController).setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q91 Step V Adding a SMSSender
+=============================
+
+///////////////////////////////////////////////////////////////////////////// 
+Exercise Public Chat Room
+///////////////////////////////////////////////////////////////////////////// 1
+Q92
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class ChatWindow1 extends JFrame{
+	private JTextArea messageTextArea;
+	private JTextField messageText;
+	private ChatWindow2 chatWindow2;
+	ChatWindow1(ChatWindow2 chatWindow2){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Danapala");
+		this.chatWindow2=chatWindow2;
+		
+		messageTextArea=new JTextArea();
+		messageTextArea.setFont(new Font("",1,25));
+		JScrollPane messageTextPane=new JScrollPane(messageTextArea);
+		add("Center",messageTextPane);
+		
+		messageText=new JTextField();
+		messageText.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String message=messageText.getText();
+				chatWindow2.setMessage(getTitle()+" : "+message);
+				messageTextArea.append("Me : "+message+"\t"); 
+			}
+		});
+		messageText.setFont(new Font("",1,20));
+		add("South",messageText);
+	}	
+	public void setMessage(String message){
+		messageTextArea.append(message+"\n");
+	}
+}
+class ChatWindow2 extends JFrame{
+	private JTextArea messageTextArea;
+	private JTextField messageText;
+	private ChatWindow1 chatWindow1;
+	
+	ChatWindow2(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Gunapala");
+		
+		chatWindow1=new ChatWindow1(this);
+		chatWindow1.setVisible(true);
+		
+		messageTextArea=new JTextArea();
+		messageTextArea.setFont(new Font("",1,25));
+		JScrollPane messageTextPane=new JScrollPane(messageTextArea);
+		add("Center",messageTextPane);
+		
+		messageText=new JTextField();
+		messageText.setFont(new Font("",1,20));
+		messageText.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String message=getTitle()+" : "+messageText.getText();
+				chatWindow1.setMessage(message);
+				messageTextArea.append("Me : "+messageText.getText()+"\n");
+			}
+		});
+		add("South",messageText);
+	}	
+	public void setMessage(String message){
+		messageTextArea.append(message+"\n");
+	}
+	
+}
+
+class Demo{
+	public static void main(String args[]){
+		new ChatWindow2().setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q93 From Q92
+============
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+class ChatWindow1 extends JFrame{
+	private JTextArea messageTextArea;
+	private JTextField messageText;
+	private ChatWindow2 chatWindow2;
+	ChatWindow1(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Danapala");
+		
+		messageTextArea=new JTextArea();
+		messageTextArea.setFont(new Font("",1,25));
+		JScrollPane messageTextPane=new JScrollPane(messageTextArea);
+		add("Center",messageTextPane);
+		
+		messageText=new JTextField();
+		messageText.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String message=messageText.getText();
+				chatWindow2.setMessage(getTitle()+" : "+message);
+				messageTextArea.append("Me : "+message+"\t"); 
+			}
+		});
+		messageText.setFont(new Font("",1,20));
+		add("South",messageText);
+	}	
+	public void setMessage(String message){
+		messageTextArea.append(message+"\n");
+	}
+	public void addChatWindow2(ChatWindow2 chatWindow2){
+		this.chatWindow2=chatWindow2;
+	}
+}
+class ChatWindow2 extends JFrame{
+	private JTextArea messageTextArea;
+	private JTextField messageText;
+	private ChatWindow1 chatWindow1;
+	
+	ChatWindow2(){
+		setSize(300,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setTitle("Gunapala");
+		
+		
+		messageTextArea=new JTextArea();
+		messageTextArea.setFont(new Font("",1,25));
+		JScrollPane messageTextPane=new JScrollPane(messageTextArea);
+		add("Center",messageTextPane);
+		
+		messageText=new JTextField();
+		messageText.setFont(new Font("",1,20));
+		messageText.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String message=getTitle()+" : "+messageText.getText();
+				chatWindow1.setMessage(message);
+				messageTextArea.append("Me : "+messageText.getText()+"\n");
+			}
+		});
+		add("South",messageText);
+	}	
+	public void setMessage(String message){
+		messageTextArea.append(message+"\n");
+	}
+	public void addChatWindow1(ChatWindow1 chatWindow1){
+		this.chatWindow1=chatWindow1;
+	}
+}
+
+class Demo{
+	public static void main(String args[]){
+		ChatWindow1 chatWindow1=new ChatWindow1();
+		ChatWindow2 chatWindow2=new ChatWindow2();
+		
+		chatWindow1.addChatWindow2(chatWindow2);
+		chatWindow2.addChatWindow1(chatWindow1);
+		
+		chatWindow1.setVisible(true);
+		chatWindow2.setVisible(true);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q94
+class Vehicle{
+	public void park(){}
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle[] vehicles={new Car(),new Van(),new Car(),new Bus(),new Van()};
+		for(Vehicle v1 : vehicles){
+			v1.park();
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+		ArrayList
+///////////////////////////////////////////////////////////////////////////// 
+Q95
+import java.util.*;
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new String("A"));
+		ar.add(new String("B"));
+		ar.add(new String("C"));
+		ar.add(new String("D"));
+		ar.add(new String("E"));
+		System.out.println(ar); //ar.toString()
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q96
+import java.util.*;
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new String("A"));
+		ar.add(new String("B"));
+		ar.add(new String("C"));
+		ar.add(new String("D"));
+		ar.add(new String("E"));
+		System.out.println(ar); //ar.toString()
+		
+		ar.remove(2);
+		System.out.println(ar); //ar.toString()
+		
+		ar.remove(new String("E"));
+		System.out.println(ar); //ar.toString()
+		
+		ar.add(2,"C");
+		System.out.println(ar); //ar.toString()
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////// 
+Q97
+import java.util.*;
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new Customer(1001,"Danapala"));
+		ar.add(new Customer(1002,"Gunapala"));
+		ar.add(new Customer(1003,"Somapala"));
+		ar.add(new Customer(1004,"Siripala"));
+		System.out.println(ar); //[adddress.....]
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q98
+import java.util.*;
+class Customer{ //extends Object
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new Customer(1001,"Danapala"));
+		ar.add(new Customer(1002,"Gunapala"));
+		ar.add(new Customer(1003,"Somapala"));
+		ar.add(new Customer(1004,"Siripala"));
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Siripala]
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q99
+import java.util.*;
+class Customer{ //extends Object
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new Customer(1001,"Danapala"));
+		ar.add(new Customer(1002,"Gunapala"));
+		ar.add(new Customer(1003,"Somapala"));
+		ar.add(new Customer(1004,"Siripala"));
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Siripala]
+		
+		ar.remove(2);
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1004-Siripala]
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////// 
+Q100
+import java.util.*;
+class Customer{ //extends Object
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList ar=new ArrayList();
+		ar.add(new Customer(1001,"Danapala"));
+		ar.add(new Customer(1002,"Gunapala"));
+		ar.add(new Customer(1003,"Somapala"));
+		ar.add(new Customer(1004,"Siripala"));
+	
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Siripala]
+	
+		ar.add(new String("ABC"));				
+		
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Siripala, ABC]
+	}
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////// 
+Q101
+import java.util.*;
+class Customer{ //extends Object
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>ar=new ArrayList<>();
+		ar.add(new Customer(1001,"Danapala"));
+		ar.add(new Customer(1002,"Gunapala"));
+		ar.add(new Customer(1003,"Somapala"));
+		ar.add(new Customer(1004,"Siripala"));
+	
+		System.out.println(ar); //[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Siripala]
+	
+		//ar.add(new String("ABC"));	//Illegal			
+		for(Customer c1 : ar){
+			System.out.println(c1);
+		}	
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q102
+
+import java.util.*;
+class Vehicle{
+	public void park(){}
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park();
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	NumberPatternBucket
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q103 Step I
+===========
+class NumberPatternObserver{
+	public void update(int mumber){
+	
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q104 Step II
+============
+import java.util.*;
+class NumberPatternObserver{
+	public void update(int mumber){
+	
+	}
+}
+
+class NumberPatternObservable{ //Controller
+	private ArrayList<NumberPatternObserver>observerList=new ArrayList<>();
+	
+	public void addNumberPatternObserver(NumberPatternObserver ob){
+		observerList.add(ob);
+	}	
+	public void removeNumberPatternObserver(NumberPatternObserver ob){
+		observerList.remove(ob);
+	}	
+	public void notifyObservers(int number){
+		for(NumberPatternObserver ob: observerList){
+			ob.update(number);
+		}
+
+	}
+	public void setNumber(int number){
+		notifyObservers(number);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q105 Step III
+=============
+import java.util.*;
+class NumberPatternObserver{
+	public void update(int mumber){
+	
+	}
+}
+
+class NumberPatternObservable{ //Controller
+	private ArrayList<NumberPatternObserver>observerList=new ArrayList<>();
+	
+	public void addNumberPatternObserver(NumberPatternObserver ob){
+		observerList.add(ob);
+	}	
+	public void removeNumberPatternObserver(NumberPatternObserver ob){
+		observerList.remove(ob);
+	}	
+	public void notifyObservers(int number){
+		for(NumberPatternObserver ob: observerList){
+			ob.update(number);
+		}
+
+	}
+	public void setNumber(int number){
+		notifyObservers(number);
+	}
+}
+class OddNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isOdd(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isOdd(int number){
+		return number%2==1;
+	}
+	private void addToArray(int number){
+		//
+	}
+}
+class EvenNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isEven(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isEven(int number){
+		return number%2==0;
+	}
+	private void addToArray(int number){
+		//
+	}
+}
+class PrimeNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isPrime(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isPrime(int number){
+		return true;
+	}
+	private void addToArray(int number){
+		//
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		NumberPatternObservable ob=new NumberPatternObservable();
+		ob.addNumberPatternObserver(new EvenNumberBucket());
+		ob.addNumberPatternObserver(new OddNumberBucket());
+		ob.addNumberPatternObserver(new PrimeNumberBucket());
+		
+		Random r=new Random();
+		for(int i=0; i<1000; i++){
+			int rand=r.nextInt(100000);
+			ob.setNumber(rand);
+			try{Thread.sleep(500);}catch(Exception ex){}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q106 Step IV
+============
+import java.util.*;
+class NumberPatternObserver{
+	public void update(int mumber){
+		
+	}
+}
+
+class NumberPatternObservable{ //Controller
+	private ArrayList<NumberPatternObserver>observerList=new ArrayList<>();
+	
+	public void addNumberPatternObserver(NumberPatternObserver ob){
+		observerList.add(ob);
+	}	
+	public void removeNumberPatternObserver(NumberPatternObserver ob){
+		observerList.remove(ob);
+	}	
+	public void notifyObservers(int number){
+		for(NumberPatternObserver ob: observerList){
+			ob.update(number);
+		}
+
+	}
+	public void setNumber(int number){
+		notifyObservers(number);
+	}
+}
+class OddNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isOdd(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isOdd(int number){
+		return number%2==1;
+	}
+	private void addToArray(int number){
+		if(!isDuplicate(number)){
+			extendsArray();
+			numberArray[numberArray.length-1]=number;
+			System.out.println(Arrays.toString(numberArray));
+		}
+	}
+	private boolean isDuplicate(int number){
+		for (int i = 0; i < numberArray.length; i++){
+			if(numberArray[i]==number){
+				return true;
+			}
+		}
+		return false;
+	}
+	private void extendsArray(){
+		int[] tempNumberArray=new int[numberArray.length+1];
+		for (int i = 0; i < numberArray.length; i++){
+			tempNumberArray[i]=numberArray[i];
+		}
+		numberArray=tempNumberArray;
+	}
+}
+class EvenNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isEven(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isEven(int number){
+		return number%2==0;
+	}
+	private void addToArray(int number){
+		if(!isDuplicate(number)){
+			extendsArray();
+			numberArray[numberArray.length-1]=number;
+			Sy
+stem.out.println(Arrays.toString(numberArray));
+		}
+	}
+	private boolean isDuplicate(int number){
+		for (int i = 0; i < numberArray.length; i++){
+			if(numberArray[i]==number){
+				return true;
+			}
+		}
+		return false;
+	}
+	private void extendsArray(){
+		int[] tempNumberArray=new int[numberArray.length+1];
+		for (int i = 0; i < numberArray.length; i++){
+			tempNumberArray[i]=numberArray[i];
+		}
+		numberArray=tempNumberArray;
+	}
+}
+class PrmeNumberBucket extends NumberPatternObserver{
+	private int[] numberArray=new int[0];
+	public void update(int number){
+		if(isPrime(number)){
+			addToArray(number);
+		}
+	}
+	private boolean isPrime(int number){
+		if(number<2){
+			return false;
+		}
+		for (int i = 2; i <number ; i++){
+			if(number%i==0){
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	private void addToArray(int number){
+		if(!isDuplicate(number)){
+			extendsArray();
+			numberArray[numberArray.length-1]=number;
+			System.out.println(Arrays.toString(numberArray));
+		}
+	}
+	private boolean isDuplicate(int number){
+		for (int i = 0; i < numberArray.length; i++){
+			if(numberArray[i]==number){
+				return true;
+			}
+		}
+		return false;
+	}
+	private void extendsArray(){
+		int[] tempNumberArray=new int[numberArray.length+1];
+		for (int i = 0; i < numberArray.length; i++){
+			tempNumberArray[i]=numberArray[i];
+		}
+		numberArray=tempNumberArray;
+	}
+}
+
+class Demo{
+	public static void main(String args[]){
+		NumberPatternObservable ob=new NumberPatternObservable();
+		ob.addNumberPatternObserver(new EvenNumberBucket());
+		ob.addNumberPatternObserver(new OddNumberBucket());
+		ob.addNumberPatternObserver(new PrimeNumberBucket());
+		
+		Random r=new Random();
+		for(int i=0; i<1000; i++){
+			int rand=r.nextInt(100);
+			ob.setNumber(rand);
+			try{Thread.sleep(1500);}catch(Exception ex){}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Abstraction (Abstract Classes, abstract methods)
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q107 From Q102
+==============
+import java.util.*;
+class Vehicle{
+	public void park(){}
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park(); //Single interface Many forms
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q108 From Q108 (Compile Error)
+==============================
+import java.util.*;
+class Vehicle{
+	public void park(); //
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park(); //Single interface Many forms
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q109 From Q108 (Asbstract methods)
+==================================
+import java.util.*;
+class Vehicle{ //Illegal
+	abstract public void park(); //Leghal
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park(); //Single interface Many forms
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q110 From Q109 (Abstract Classes)
+=================================
+import java.util.*;
+abstract class Vehicle{ 
+	abstract public void park();
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus extends Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park(); //Single interface Many forms
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q111 Case I
+===========
+class Vehicle{ 
+	public void park(); //Illegal
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q112 Case II
+============
+class Vehicle{  //Illegal
+	abstract public void park();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q113 Case III
+=============
+abstract class Vehicle{ 
+	abstract public void park(){ //Illegal
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q114 Case IV
+============
+abstract class Vehicle{ 
+	abstract public void park();
+	public void start(){ //Legal
+		//Body
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q115 Case V
+===========
+abstract class Vehicle{ 
+	//abstract public void park();
+	public void start(){ //Legal
+		//Body
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q116 Csse VI
+============
+abstract class Vehicle{ 
+	abstract public void park();
+	abstract public void start();
+	public void stop(){
+		//
+	}
+}
+class Car extends Vehicle{}
+class Bus extends Vehicle{
+	public void park(){
+		//
+	}
+}
+class Van extends Vehicle{
+	public void park(){
+		//
+	}
+	public void start(){
+		//
+	}
+}
+abstract class MB extends Vehicle{}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q117 Case VII
+=============
+abstract class Vehicle{ 
+	abstract public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1; //Legal
+		v1=new Vehicle(); //Illegal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q118 Case VIII
+==============
+abstract class Vehicle{ 
+	int year;
+	abstract int model; //Illegal
+	
+	abstract public void park();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q119 Case IX
+============
+abstract class Vehicle{ 
+	int year;
+	Vehicle(){
+		//
+	}
+	abstract Vehicle(int year); //Illegal
+	
+	abstract public void park();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q120 Case X
+===========
+abstract class Vehicle{ 
+	abstract public void park();
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1; //Legal
+		v1=new Car();
+		v1.park(); //Legal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Java Interfaces
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q121
+/*abstract class Vehicle{ 
+	abstract public void park();
+	abstract public void start();
+	abstract public void stop();
+}*/
+interface Vehicle{ 
+	public void park();
+	public void start();
+	public void stop();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q122 From Q110 Using java interfaces
+====================================
+import java.util.*;
+interface Vehicle{ 
+	public void park();
+}
+class Car implements Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Van implements  Vehicle{
+	public void park(){
+		System.out.println("Van Parking..");
+	}
+}
+class Bus implements Vehicle{
+	public void park(){
+		System.out.println("Bus Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Vehicle>vehicleList=new ArrayList<>();
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for(Vehicle v1 : vehicleList){
+			v1.park(); //Single interface Many forms
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q123 Case I
+===========
+interface Vehicle{ 
+	public void park(); //Implicitly abstract
+	abstract public void start(); //Legal
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q124 Case II
+============
+interface Vehicle{ 
+	void park(); //Implicitly public
+	public void stop(); //Legal
+	//private void start(); //Illegal
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q125 Case III
+=============
+interface Vehicle{ 
+	public void stop(){ //Illegal
+		//
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q126 Case IV
+============
+interface Vehicle{ 
+
+}
+//class Car extends Vehicle{} //Illegal
+class Van implements Vehicle{}
+//Van Is-A Vehicle
+//Vehicle-->Super interface, Van -->Sub class of Vehicle
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q127 Case V
+===========
+import java.util.*;
+interface Vehicle{ 
+	public void park();
+	public void start();
+}
+class Car implements Vehicle{}
+class Van implements Vehicle{
+	public void park(){
+		//
+	}
+}
+class Bus implements Vehicle{
+	public void park(){
+		//
+	}
+	public void start(){
+		//
+	}
+}
+abstract class MB implements Vehicle{}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q128 Case VI
+============
+interface Vehicle{ 
+	int year=2000; //implicitly public, final, static
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		System.out.println(Vehicle.year); //2000
+		Vehicle.year=1999; //Illegal, year-->final
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q129 Case VII
+=============
+interface Vehicle{ 
+	Vehicle(){ //Illegal
+		
+	}
+	public void park();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q130 Case VIII
+==============
+interface Vehicle{ 
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1; //Legal
+		v1=new Vehicle(); //Illegal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q131 Case IX
+============
+class Animal{}
+class Lion extends Animal{}
+interface Fox{}
+class Man extends Lion implements Fox{}
+//ManIs-A Lion
+//ManIs-A Fox
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	WaterTank
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q132
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class WaterLevelObserver extends JFrame{
+	public void update(int waterLevel){
+		//No implementation
+	}
+}
+class WaterLevelObservable{
+	private int waterLevel;
+	
+	private ArrayList<WaterLevelObserver> observerList=new ArrayList<>();
+	public void addWaterLevelObserver(WaterLevelObserver waterLevelObserver){
+		observerList.add(waterLevelObserver);
+	}
+	public void removeWaterLevelObserver(WaterLevelObserver waterLevelObserver){
+		observerList.remove(waterLevelObserver);
+	}
+	public void notifyObservers(){
+		for(WaterLevelObserver ob : observerList){
+			ob.update(waterLevel);
+		}
+	}
+	public void setWaterLevel(int waterLevel){
+		if(this.waterLevel!=waterLevel){
+			this.waterLevel=waterLevel;
+			notifyObservers();	
+		}
+	}
+}
+class AlarmWindow extends WaterLevelObserver{
+	private JLabel alarmLabel;
+	AlarmWindow(){
+		setSize(300,300);
+		setTitle("AlarmWindow");
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("       ");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}
+	public void update(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "Alarm On": "Alarm OFF");
+	}
+}
+class DisplayWindow extends WaterLevelObserver{
+	private JLabel displayLabel;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setTitle("DisplayWindow");
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		displayLabel=new JLabel("       ");
+		displayLabel.setFont(new Font("",1,25));
+		add(displayLabel);
+		setVisible(true);
+	}
+	public void update(int waterLevel){
+		displayLabel.setText("Water Level : "+waterLevel);
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	private WaterLevelObservable waterLevelObservable;
+	
+	WaterTank(WaterLevelObservable waterLevelObservable ){
+		this.waterLevelObservable=waterLevelObservable;
+		
+		setSize(300,300);
+		setTitle("WaterTank");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0, 100,50);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				waterLevelObservable.setWaterLevel(waterLevelSlider.getValue());
+			}
+		});
+		add(waterLevelSlider);
+	}
+	
+}
+
+class Demo{
+	public static void main(String args[]){
+		WaterLevelObservable ob=new WaterLevelObservable();
+		ob.addWaterLevelObserver(new AlarmWindow());
+		ob.addWaterLevelObserver(new AlarmWindow());
+		ob.addWaterLevelObserver(new DisplayWindow());
+		ob.addWaterLevelObserver(new DisplayWindow());
+		
+		new WaterTank(ob).setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q133 From Q132 Using Java interfaces
+====================================
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+
+interface  WaterLevelObserver{
+	public void update(int waterLevel);
+	
+}
+class WaterLevelObservable{
+	private int waterLevel;
+	
+	private ArrayList<WaterLevelObserver> observerList=new ArrayList<>();
+	public void addWaterLevelObserver(WaterLevelObserver waterLevelObserver){
+		observerList.add(waterLevelObserver);
+	}
+	public void removeWaterLevelObserver(WaterLevelObserver waterLevelObserver){
+		observerList.remove(waterLevelObserver);
+	}
+	public void notifyObservers(){
+		for(WaterLevelObserver ob : observerList){
+			ob.update(waterLevel);
+		}
+	}
+	public void setWaterLevel(int waterLevel){
+		if(this.waterLevel!=waterLevel){
+			this.waterLevel=waterLevel;
+			notifyObservers();	
+		}
+	}
+}
+class AlarmWindow extends JFrame implements WaterLevelObserver{
+	private JLabel alarmLabel;
+	AlarmWindow(){
+		setSize(300,300);
+		setTitle("AlarmWindow");
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		alarmLabel=new JLabel("       ");
+		alarmLabel.setFont(new Font("",1,25));
+		add(alarmLabel);
+		setVisible(true);
+	}
+	public void update(int waterLevel){
+		alarmLabel.setText(waterLevel>=50 ? "Alarm On": "Alarm OFF");
+	}
+}
+class DisplayWindow extends JFrame implements WaterLevelObserver{
+	private JLabel displayLabel;
+	
+	DisplayWindow(){
+		setSize(300,300);
+		setTitle("DisplayWindow");
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		displayLabel=new JLabel("       ");
+		displayLabel.setFont(new Font("",1,25));
+		add(displayLabel);
+		setVisible(true);
+	}
+	public void update(int waterLevel){
+		displayLabel.setText("Water Level : "+waterLevel);
+	}
+}
+class WaterTank extends JFrame{
+	private JSlider waterLevelSlider;
+	private WaterLevelObservable waterLevelObservable;
+	
+	WaterTank(WaterLevelObservable waterLevelObservable ){
+		this.waterLevelObservable=waterLevelObservable;
+		
+		setSize(300,300);
+		setTitle("WaterTank");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(new FlowLayout());
+		
+		waterLevelSlider=new JSlider(JSlider.VERTICAL,0, 100,50);
+		waterLevelSlider.setFont(new Font("",1,25));
+		waterLevelSlider.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent evt){
+				waterLevelObservable.setWaterLevel(waterLevelSlider.getValue());
+			}
+		});
+		add(waterLevelSlider);
+	}
+	
+}
+
+class Demo{
+	public static void main(String args[]){
+		WaterLevelObservable ob=new WaterLevelObservable();
+		ob.addWaterLevelObserver(new AlarmWindow());
+		ob.addWaterLevelObserver(new AlarmWindow());
+		ob.addWaterLevelObserver(new DisplayWindow());
+		ob.addWaterLevelObserver(new DisplayWindow());
+		
+		new WaterTank(ob).setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q134 Case X
+===========
+class Lion{}
+interface Fox{}
+interface Dog{}
+class Man extends Lion implements Fox,Dog{ //Legal
+	
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q135 Case X
+===========
+interface Fox{}
+interface Dog extends Fox{}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q136 Case XI
+============
+interface Fox{}
+interface Dog{}
+interface Cat extends Fox,Dog{ //Illegal
+	
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q137 Case XII
+=============
+class Lion{
+	
+}
+interface Fox extends Lion{} //Illegal
+interface Dog implements Lion{} //Illegal
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q138 Case XIII
+==============
+interface Vehicle{
+	public void park();
+	default public void start(){ //Legal, since JDK1.8
+		System.out.println("Default Implementation");
+	}
+}
+class Car implements Vehicle{
+	public void park(){
+		System.out.println("Car Parking..");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=new Car();
+		v1.park();
+		v1.start();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q139 Case XIV
+=============
+interface Vehicle{
+	public void park();
+	static public void staticMethod(){ //Legal, since JDK1.8
+		System.out.println("Static Implementation");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle.staticMethod(); 
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q140
+interface Demo{
+	public static void main(String args[]){
+		System.out.println("interface Demo");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Claas "Object"
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q141 Exercise
+=============
+import java.util.*;
+interface Demo{
+	public static void main(String args[]){
+		ArrayList <String>strList=new ArrayList<>();
+		strList.add("Danapala");
+		strList.add("Gunapala");
+		strList.add("Somapala");
+		strList.add("Siripala");
+		strList.add("Amarapala");
+		System.out.println(strList); //
+		System.out.println(strList.toString()); //
+		String list=strList.toString();
+		System.out.println(list); 
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q142 Exercise
+=============
+import java.util.*;
+interface Demo{
+	public static void main(String args[]){
+		ArrayList <String>strList=new ArrayList<>();
+		strList.add("Danapala");
+		strList.add("Gunapala");
+		strList.add("Somapala");
+		strList.add("Siripala");
+		strList.add("Amarapala");
+		System.out.println(strList); //
+		
+		System.out.println("contains Somapala : "+strList.contains("Somapala")); // true
+		
+		strList.remove(2);
+		System.out.println(strList); //
+		System.out.println("contains Somapala : "+strList.contains("Somapala")); // false
+		
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q143
+import java.util.*;
+interface Demo{
+	public static void main(String args[]){
+		ArrayList <String>strList=new ArrayList<>();
+		strList.add("Danapala");
+		strList.add("Gunapala");
+		strList.add("Somapala");
+		strList.add("Siripala");
+		strList.add("Amarapala");
+		System.out.println(strList); //
+		
+		System.out.println("contains Somapala : "+strList.contains("Somapala")); // true
+		
+		strList.remove(new String("Somapala"));
+		System.out.println(strList); //
+		System.out.println("contains Somapala : "+strList.contains("Somapala")); // false
+		
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q144 Class Object
+=================
+import java.util.*;
+class Customer /*compiler inserts "extends Object" */{ 
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Customer c1=new Customer(1001,"Danapala");
+		c1.toString(); //Legal
+		c1.hashCode(); //Legal
+		c1.getClass();
+		c1.equals(c1);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q145
+import java.util.*;
+class A /*compiler inserts "extends Object"*/{
+	
+}
+class Customer extends A{ 
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Customer c1=new Customer(1001,"Danapala");
+		c1.toString(); //Legal
+		c1.hashCode(); //Legal
+		c1.getClass();
+		c1.equals(c1);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q146
+class A{
+	A(){
+		super(); //Legal, call constructor of class "Object"
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q147  
+import java.util.*;
+import javax.swing.*;
+
+class A{
+	
+}
+class Demo{
+	public static void main(String args[]){
+		Object ob;
+		ob=new A(); //Legal
+		ob=new Random(); //Legal
+		ob=new ArrayList(); //Legal
+		ob=new JFrame(); //Legal
+		ob=new JButton(); //Legal
+		ob=new String(); //Legal
+		ob=new int[10]; //Legal
+		ob=new double[10]; //Legal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q148
+class Demo{
+	public static void main(String args[]){
+		int[] xr=new int[5];
+		xr.hashCode();
+		xr.toString();
+		xr.getClass();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Method "public String toString()"
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q149
+import java.util.*;
+class Customer /*compiler inserts "extends Object" */{ 
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	/*
+	public String toString(){
+		int address=hashCode(); //returs the address
+		String className=getClass().getName();
+		return className+"@"+Integer.toHextString(address);
+	}
+	*/
+}
+class Demo{
+	public static void main(String args[]){
+		Customer c1=new Customer(1001,"Danapala");
+		System.out.println(c1); //call "c1.toString()"
+		System.out.println(c1.toString());
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q150
+import java.util.*;
+class Customer /*compiler inserts "extends Object" */{ 
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	/*
+	public String toString(){
+		int address=hashCode(); //returs the address
+		String className=getClass().getName();
+		return className+"@"+Integer.toHextString(address);
+	}
+	*/
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Customer c1=new Customer(1001,"Danapala");
+		System.out.println(c1); //call "c1.toString()"
+		System.out.println(c1.toString());
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q151 Exercise 
+=============
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		System.out.println(strList);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q152 Overriding "toString()"
+============================
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		System.out.println(strList);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Method "equals(Object)"
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q153 
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		strList.add(new Customer(1005,"Amarapala"));
+		System.out.println(strList);
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+		
+		strList.remove(new Customer(1002,"Gunapala"));
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q154
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+	/*
+	public boolean equals(Object obj){
+		if(this==obj){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	*/
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		strList.add(new Customer(1005,"Amarapala"));
+		System.out.println(strList);
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+		
+		strList.remove(new Customer(1002,"Gunapala"));
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q155
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+	/*
+	public boolean equals(Object obj){
+		if(this==obj){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	*/
+	public boolean equals(Object obj){
+		if(this.code==obj.code){ //Illegal, obj.code?
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		strList.add(new Customer(1005,"Amarapala"));
+		System.out.println(strList);
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+		
+		strList.remove(new Customer(1002,"Gunapala"));
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q156
+import java.util.*;
+
+class Customer{
+	private int code;
+	private String name;
+	Customer(int code, String name){
+		this.code=code;
+		this.name=name;
+	}
+	public String toString(){
+		return code+"-"+name;
+	}
+	/*
+	public boolean equals(Object obj){
+		if(this==obj){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	*/
+	public boolean equals(Object obj){
+		Customer c1=(Customer)obj; //Object Reference Casting
+		if(this.code==c1.code){ //Legal
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		ArrayList <Customer>strList=new ArrayList<>();
+		strList.add(new Customer(1001,"Danapala"));
+		strList.add(new Customer(1002,"Gunapala"));
+		strList.add(new Customer(1003,"Somapala"));
+		strList.add(new Customer(1004,"Siripala"));
+		strList.add(new Customer(1005,"Amarapala"));
+		System.out.println(strList);
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+		
+		strList.remove(new Customer(1002,"Gunapala"));
+		System.out.println(strList);
+		System.out.println("contains :Gunapala-1002 : "+strList.contains(new Customer(1002,"Gunapala")));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+							Event Handling	
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q157
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		add(exitButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q158 From Q157
+===============
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		exitButton.add(new A()); //Error
+		add(exitButton);
+	}	
+}
+class A{
+	public void m(){
+		System.exit(0);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q159 ActionListener vs ActionEvent
+==================================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton exitButton;
+	
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		exitButton=new JButton();
+		exitButton.setText("Exit");
+		exitButton.setFont(new Font("",1,30));
+		exitButton.addActionListener(new A()); 
+		add(exitButton);
+	}	
+}
+class A implements ActionListener{
+	public void actionPerformed(ActionEvent evt){
+		System.exit(0);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q160 Exercise
+=============
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		setButton.addActionListener(new SetButtonAction());
+		add(setButton);
+	}	
+}
+class SetButtonAction implements ActionListener{
+	public void actionPerformed(ActionEvent evt){
+		
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q161 From Q160 Compile Error
+============================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		setButton.addActionListener(new SetButtonAction());
+		add(setButton);
+	}	
+}
+class SetButtonAction implements ActionListener{
+	public void actionPerformed(ActionEvent evt){
+		String title=textField.getText();
+		setTitle(title);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q162 Option 1 for Q161
+======================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		setButton.addActionListener(new SetButtonAction(this));
+		add(setButton);
+	}	
+}
+class SetButtonAction implements ActionListener{
+	MyFrame myFrame;
+	SetButtonAction(MyFrame myFrame){
+		this.myFrame=myFrame;
+	}
+	public void actionPerformed(ActionEvent evt){
+		String title=myFrame.textField.getText();
+		myFrame.setTitle(title);
+	}
+}
+
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q163 Option 2 for Q161
+======================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame implements ActionListener{
+	private JButton setButton;
+	JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		setButton.addActionListener(this);
+		add(setButton);
+	}	
+	public void actionPerformed(ActionEvent evt){
+		String title=textField.getText();
+		setTitle(title);
+	}
+}
+
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q164 Option 3 for Q161 (Regular Inner Classes)
+==============================================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		setButton.addActionListener(new SetButtonAction());
+		add(setButton);
+	}	
+	//-----------------Regular Inner class-----------------
+	class SetButtonAction implements ActionListener{
+		public void actionPerformed(ActionEvent evt){
+			String title=textField.getText();
+			setTitle(title);
+		}
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q165 Option 4 for Q161 (using local inner classes)
+==================================================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		//-----------------Local Inner class-----------------
+		class SetButtonAction implements ActionListener{
+			public void actionPerformed(ActionEvent evt){
+				String title=textField.getText();
+				setTitle(title);
+			}
+		}		
+		setButton.addActionListener(new SetButtonAction());
+		add(setButton);
+	}	
+	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q166 Option 5 for Q161 (Anonymous Inner Classes)
+================================================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		//-----------------Anonmous Inner class-----------------
+		ActionListener ob=new ActionListener(){
+			int a;
+			void mA(){}
+			public void actionPerformed(ActionEvent evt){
+				String title=textField.getText();
+				setTitle(title);
+			}
+		};
+		setButton.addActionListener(ob);
+		add(setButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////
+Q166 B (From Q166)
+==================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+		//-----------------Anonmous Inner class-----------------
+		
+		setButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String title=textField.getText();
+				setTitle(title);
+			}
+		});
+		add(setButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+	Anonymous Inner Classes
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q167 Exercise
+=============
+class Vehicle{
+	public void park(){
+		System.out.println("Vehicle parking...");
+	}
+}
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car parking...");
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=new Car();
+		v1.park();	
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q168 From Q167 Using Anonymous inner
+====================================
+class Vehicle{
+	public void park(){
+		System.out.println("Vehicle parking...");
+	}
+}
+/*
+class Car extends Vehicle{
+	public void park(){
+		System.out.println("Car parking...");
+	}	
+}
+*/
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=new Vehicle(){
+			int year;
+			String model;
+			public void start(){}
+			public void park(){
+				System.out.println("Car parking...");
+			}	
+		};
+		v1.park();	
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q169 Exercise
+=============
+abstract class Vehicle{
+	abstract public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=new Vehicle();  
+		Vehicle v2=new Vehicle(){};  
+		Vehicle v3=new Vehicle(){
+			public void park(){
+				System.out.println("Car Parking...");
+			}
+		};  
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q170 Exercise
+=============
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=new Vehicle();  
+		Vehicle v2=new Vehicle(){};  
+		Vehicle v3=new Vehicle(){
+			public void park(){
+				System.out.println("Car Parking...");
+			}
+		};  
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+				Lambda Expression
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q171
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{
+				System.out.println("Car Parking...");
+		};  
+		v1.park();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q172
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{
+			System.out.println("Car Parking...");
+		};
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q173 Option 6 for Q161 Using Lambda Expression
+==============================================
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+	private JButton setButton;
+	private JTextField textField;
+	MyFrame(){
+		setSize(300,300);
+		setTitle("MyFrame");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new FlowLayout());
+		
+		textField=new JTextField(10);
+		textField.setFont(new Font("",1,30));
+		add(textField);
+		setButton=new JButton();
+		setButton.setText("Set Title");
+		setButton.setFont(new Font("",1,30));
+
+		/*ActionListener ob=new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				String title=textField.getText();
+				setTitle(title);
+			}
+		};*/		
+		//-----------------Lambda Expression-----------------
+		ActionListener ob=(ActionEvent evt)->{
+				String title=textField.getText();
+				setTitle(title);			
+		};
+		setButton.addActionListener(ob);
+		add(setButton);
+	}	
+}
+class Demo{
+	public static void main(String args[]){
+		new MyFrame().setVisible(true);
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////// 
+Q174 Case I
+===========
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->System.out.println("Car Parking...");
+		v1.park();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q175 Case II
+============
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{
+			System.out.println("Statement 1");
+			System.out.println("Statement 2");
+		};
+		v1.park();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q176 Case III
+=============
+interface Vehicle{
+	public void park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{
+			System.out.println("Statement 1");
+			System.out.println("Statement 2");
+		}//; //Illegal
+		v1.park();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q177 Case IV
+============
+interface Vehicle{
+	public void park(int location);
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=(x)->{
+			System.out.println("Car Parking..."+x);
+		};
+		v1.park(1001);
+		
+		Vehicle v2=(int location)->{
+			System.out.println("Car Parking..."+location);
+		};
+		v2.park(1002);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q178 Case V
+===========
+interface Vehicle{
+	public void park(int location, boolean b);
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=(x,y)->{
+			System.out.println("Car Parking...");
+			//x--->int
+			//y--->boolean
+			x=true;
+			y=100;
+		};
+		v1.park(1001,true);
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q179 Case VI
+============
+interface Vehicle{
+	public boolean park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->true;		
+		//Vehicle v2=()->return true;		
+		Vehicle v3=()->{
+			return true;
+		};
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q180 Case VII
+=============
+interface Vehicle{
+	public void  park();
+	public void  start();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{ //Illegal, "Vehicle" is not a Fuctional interface
+			return true;
+		};
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q181 Case VIII
+==============
+interface Vehicle{
+	public void  park();
+	default public void  start(){
+		System.out.println("Default Implementation of start");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{
+			System.out.println("Car Parking");
+		};
+		v1.park();
+		v1.start();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q182 Case IX
+============
+abstract class Vehicle{
+	abstract public void  park();
+}
+class Demo{
+	public static void main(String args[]){
+		Vehicle v1=()->{ //Illegal
+			System.out.println("Car Parking"); 
+		};
+		v1.park();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+			Garbage Collections
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q183
+class MyClass{
+	long[] xr=new long[100000];
+}
+class Demo{
+	public static void main(String args[]){
+		System.out.println("Start main");
+		for (int i = 0; i < 10000; i++){
+			System.out.println("i : "+i);
+			new MyClass(); //
+		}
+		//10GB
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q184
+class MyClass{
+	long[] xr=new long[100000];
+}
+class Demo{
+	public static void main(String args[]){
+		MyClass[] ar=new MyClass[10000];
+		System.out.println("Start main");
+		for (int i = 0; i < 10000; i++){
+			System.out.println("i : "+i);
+			ar[i]=new MyClass(); //
+		}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q185 Case I
+===========
+class MyClass{
+	long[] xr=new long[100000];
+	public void finalize(){
+		System.out.println("Deleted...");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		MyClass[] ar=new MyClass[10000];
+		System.out.println("Start main");
+		for (int i = 0; i < 10000; i++){
+			System.out.println("i : "+i);
+			new MyClass();
+		}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q186 Case II
+============
+class MyClass{
+	long[] xr=new long[100000];
+	public void finalize(){
+		System.out.println("Deleted...");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		MyClass[] ar=new MyClass[10000];
+		System.out.println("Start main");
+		new MyClass();
+		new MyClass();
+		new MyClass();
+		new MyClass();
+		try{Thread.sleep(2000);}catch(Exception ex){}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q187 Case III
+=============
+class MyClass{
+	long[] xr=new long[100000];
+	public void finalize(){
+		System.out.println("Deleted...");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		MyClass[] ar=new MyClass[10000];
+		System.out.println("Start main");
+		new MyClass();
+		new MyClass();
+		new MyClass();
+		new MyClass();
+		System.gc(); // Runtime.getRuntime().gc();
+		try{Thread.sleep(2000);}catch(Exception ex){}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q188 Case IV (Null Referencing)
+===============================
+class MyClass{
+	int a;
+	MyClass(int a){this.a=a;}
+	public void finalize(){
+		System.out.println("Deleted..."+a);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		System.out.println("Start main");
+		MyClass c1=new MyClass(100);
+		//
+		//
+		//
+		//
+		c1=null;
+		System.gc(); 
+		try{Thread.sleep(2000);}catch(Exception ex){}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q189 Case V (Re-assigning)
+==========================
+class MyClass{
+	int a;
+	MyClass(int a){this.a=a;}
+	public void finalize(){
+		System.out.println("Deleted..."+a);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		System.out.println("Start main");
+		MyClass c1=new MyClass(100);
+		//
+		//
+		//
+		//
+		c1=new MyClass(200);
+		System.gc(); 
+		try{Thread.sleep(2000);}catch(Exception ex){}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q190 Case VI (Local Scope)
+==========================
+class MyClass{
+	int a;
+	MyClass(int a){this.a=a;}
+	public void finalize(){
+		System.out.println("Deleted..."+a);
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		System.out.println("Start main");
+		int x=100;
+		if(x>0){
+			MyClass c1=new MyClass(100);
+			//
+			//
+			//
+		}
+		System.gc(); 
+		try{Thread.sleep(2000);}catch(Exception ex){}
+		System.out.println("End main");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+							Object Reference Casting
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q191
+class A{
+	int a;
+	public void mA(){
+		System.out.println("mA of A");
+	}
+}
+class B extends A{
+	int b;
+	public void mB(){
+		System.out.println("mB of B");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		A a1=new B();
+		a1.a=100;
+		a1.mA();
+		//----------Do not modify before---------------
+		a1.b=200;
+		a1.mB();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q192
+class A{
+	int a;
+	public void mA(){
+		System.out.println("mA of A");
+	}
+}
+class B extends A{
+	int b;
+	public void mB(){
+		System.out.println("mB of B");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		A a1=new B();
+		a1.a=100;
+		a1.mA();
+		//----------Do not modify before---------------
+		B b1=(B)a1; //Object Reference Casting
+		b1.b=200;
+		b1.mB();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q193 Case I
+===========
+class A{
+	int a;
+	public void mA(){
+		System.out.println("mA of A");
+	}
+}
+class B extends A{
+	int b;
+	public void mB(){
+		System.out.println("mB of B");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		A a1=new A();
+		a1.a=100;
+		a1.mA();
+		//----------Do not modify before---------------
+		B b1=(B)a1; //Runtime Error
+		b1.b=200;
+		b1.mB();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q194 Case II
+============
+class A{
+	int a;
+	public void mA(){
+		System.out.println("mA of A");
+	}
+}
+class B extends A{
+	int b;
+	public void mB(){
+		System.out.println("mB of B");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		A a1=new A();
+		a1.a=100;
+		a1.mA();
+		//----------Do not modify before---------------
+		if(a1 instanceof B){
+			B b1=(B)a1; //
+			b1.b=200;
+			b1.mB();
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q195 Case III
+=============
+class A{
+	int a;
+	public void mA(){
+		System.out.println("mA of A");
+	}
+}
+class B{
+	int b;
+	public void mB(){
+		System.out.println("mB of B");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		A a1=new A();
+		B b1=new B();
+		a1=(A)b1; //Illegal
+		b1=(B)a1; //Illegal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+Q196 Case IV
+============
+interface P{}
+class A{}
+final class B{}
+class Demo{
+	public static void main(String args[]){
+		A a1=null;
+		B b1=null;
+		P p1=null;
+		
+		a1=(A)p1; //legal
+		b1=(B)p1; //Illegal
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+	END.
+////////////////////////////////////////////////////////////////////////////////////////////////
+

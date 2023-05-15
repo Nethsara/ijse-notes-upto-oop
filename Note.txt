@@ -1,0 +1,679 @@
+Q1
+class Item{
+	int code;
+	String name;
+	double unitPrice;
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Item ob;
+		ob=new Item();
+		ob.code=1001;
+		ob.name="Suger";
+		ob.unitPrice=340.00;
+		//---------------------------
+		
+		System.out.println("Code : "+ob.code);
+		System.out.println("Name : "+ob.name);
+		System.out.println("Price: "+ob.unitPrice);
+		
+	} 
+}
+///////////////////////////////////////////////////////////////////////////
+Q2
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student();
+		s1.id="S001";
+		s1.name="Nimal";
+		s1.prf=67;
+		s1.dbms=78;
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q3
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student();
+		/*s1.id="S001";
+		s1.name="Nimal";
+		s1.prf=67;
+		s1.dbms=78;*/
+		s1.setId("S001");
+		s1.setName("Nimal");
+		s1.setPrf(67);
+		s1.setDbms(78);
+		
+		System.out.println("Id   : "+s1.getId());
+		System.out.println("Name : "+s1.getName());
+		System.out.println("Prf  : "+s1.getPrf());
+		System.out.println("Prf  : "+s1.getDbms());
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q4 Constructor method
+======================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	/*Compiler inserts
+	Student(){
+		id=null;
+		name=null;
+		prf=0;
+		dbms=0;
+	}	
+	*/ 
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student(); //--->"Student()"-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //null
+		System.out.println("Name : "+s1.getName());//null
+		System.out.println("Prf  : "+s1.getPrf()); //0
+		System.out.println("Prf  : "+s1.getDbms());//0
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q4
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	Student(){
+		id="S";
+		name="A";
+		prf=-1;
+		dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student(); //--->"Student()"-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //null
+		System.out.println("Name : "+s1.getName());//null
+		System.out.println("Prf  : "+s1.getPrf()); //0
+		System.out.println("Prf  : "+s1.getDbms());//0
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q5 Parameterized Constructors 
+=============================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		
+		System.out.println("Id   : "+s1.getId()); //S001
+		System.out.println("Name : "+s1.getName());//Nimal
+		System.out.println("Prf  : "+s1.getPrf()); //67
+		System.out.println("Prf  : "+s1.getDbms());//78
+		
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////Q6 Contructor overloading
+=========================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println("Id   of s1 : "+s1.getId()); //S001
+		System.out.println("Name of s1 : "+s1.getName());//Nimal
+		System.out.println("Prf  of s1 : "+s1.getPrf()); //67
+		System.out.println("Prf  of s1 : "+s1.getDbms());//78
+		
+		Student s2=new Student("S002","Amal");
+		System.out.println("Id   of s2 : "+s2.getId()); //S002
+		System.out.println("Name of s2 : "+s2.getName());//Amal
+		System.out.println("Prf  of s2 : "+s2.getPrf()); //-1
+		System.out.println("Prf  of s2 : "+s2.getDbms());//-1
+		
+		Student s3=new Student();
+		System.out.println("Id   of s3 : "+s3.getId()); //null
+		System.out.println("Name of s3 : "+s3.getName());//null
+		System.out.println("Prf  of s3 : "+s3.getPrf()); //-1
+		System.out.println("Prf  of s3 : "+s3.getDbms());//-1
+		
+		
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////
+Q7 public String toString()
+===========================
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.toString()); //
+		System.out.println(s1); //
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q8
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String toString(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.toString()); //
+		System.out.println(s1); //
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+Q9
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student s1=new Student("S001","Nimal",67,78); //-->Calling Constructor
+		System.out.println(s1.getStudentDetails()); //
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+	Object Arrays (Objects Reference Arrays)
+/////////////////////////////////////////////////////////////////////////////
+Q10
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		Student[] stArray=new Student[5];
+		stArray[0]=new Student("S001","Danapala",56,67);
+		stArray[1]=new Student("S002","Gunapala",56,67);
+		stArray[2]=new Student("S003","Somapala",56,67);
+		stArray[3]=new Student("S004","Siripala",56,67);
+		stArray[4]=new Student("S005","Amarapala",56,67);
+		
+		for(Student s1 : stArray){
+			System.out.println(s1.getStudentDetails());
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q11
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	//-------------------------------
+	
+	public Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}	
+	public Student(String id, String name){
+		this.id=id;
+		this.name=name;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	public Student(){
+		this.id=null;
+		this.name=null;
+		this.prf=-1;
+		this.dbms=-1;
+	}	
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setPrf(int prf){
+		this.prf=prf;
+	}
+	public void setDbms(int dbms){
+		this.dbms=dbms;
+	}
+	public String getId(){
+		return this.id; //return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public int getPrf(){
+		return prf;
+	}
+	public int getDbms(){
+		return dbms;
+	}
+	public String getStudentDetails(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){ 
+		int[] ar={34,56,67,768,89};
+		Student[] stArray={	new Student("S001","Danapala",56,67),
+							new Student("S002","Gunapala",56,67),
+							new Student("S003","Somapala",56,67),
+							new Student("S004","Siripala",56,67),
+							new Student("S005","Amarapala",56,67)
+						  };
+		
+		for(Student s1 : stArray){
+			System.out.println(s1.getStudentDetails());
+		}
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+Q12
+
+/////////////////////////////////////////////////////////////////////////////
+Q13
+
+/////////////////////////////////////////////////////////////////////////////
+Q14
+
+/////////////////////////////////////////////////////////////////////////////
+Q15
+

@@ -1,0 +1,1593 @@
+Q1
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q2
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q1 String is a Class and an Object
+===================================
+class Demo{
+	public static void main(String[] args){
+		String s1; //s1->reference type String
+		s1=new String("abc"); //String Object
+		String s2="abc"; //String literals are Objects
+		
+		System.out.println(s1); //s1.toString()
+		System.out.println(s2.toString); //
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q2 equals method
+================
+class Demo{
+	public static void main(String[] args){
+		String s1=new String("abc"); 
+		String s2=new String("abc"); 
+		String s3=new String("ABc"); 
+		
+		System.out.println(s1==s2); //false
+		System.out.println(s1.equals(s2)); //true
+		System.out.println(s1.equals(s2)); //true
+		System.out.println(s1.equals(s3)); //false
+		System.out.println(s1.equalsIgnoreCase(s3)); //true
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q3 String Pool
+==============
+class Demo{
+	public static void main(String[] args){
+		String s1="abc"; //pool
+		String s2="abc"; //pool
+		String s3=new String("abc");  //heap 
+		
+		
+		System.out.println(s1==s2); //true
+		System.out.println(s1==s3); //false
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q4
+class Demo{
+	public static void main(String[] args){
+		String s1="ab";
+		String s2="c"; 
+		String s3="abc"; 
+		String s4=s1+s2;
+		String s5="ab"+"c";
+		
+		System.out.println(s3==s4); //false
+		System.out.println(s3==s5); //true
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q5
+class Demo{
+	public static void main(String[] args){
+		final String s1="ab";
+		final String s2="c"; 
+		String s3="abc"; 
+		String s4=s1+s2;
+		String s5="ab"+"c";
+		
+		System.out.println(s3==s4); //true
+		System.out.println(s3==s5); //true
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q6
+class Demo{
+	public static void main(String[] args){
+		System.out.println("abc"=="abc"); //true
+		System.out.println("abc"==new String("abc")); //false
+		System.out.println("abc"=="ab"+"c"); //true
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q7 String Immutable Objects
+===========================
+class Demo{
+	public static void main(String[] args){
+		String name="Madawala";
+		System.out.println("Name : "+name); //Madawala
+		//		
+		//
+		//
+		String city="Madawala";
+		System.out.println("City : "+city); //Madawala
+		//
+		//
+		System.out.println();
+		System.out.println();
+		name.concat(" maya");
+		
+		System.out.println("Name : "+name); //Madawala
+		System.out.println("City : "+city); //Madawala
+		
+		String newString=name.concat(" Maya");
+		System.out.println("New Name : "+newString);
+		System.out.println(name.concat(" Maya"));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q8 String Constructors
+======================
+class Demo{
+	public static void main(String[] args){
+		String s1=new String();  //default
+		String s2=new String("abc");  //String
+		String s3=new String(new char[]{'a','b','c'});  //char[]
+		String s4=new String(new byte[]{97,98,99});  //byte[]
+		
+		System.out.println(s1); //print nothing
+		System.out.println(s2); //abc
+		System.out.println(s3); //abc
+		System.out.println(s4); //abc
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q9 length vs length()
+=====================
+class Demo{
+	public static void main(String[] args){
+		String s1=new String("abc");
+		int[] xr=new int[4];	
+		System.out.println("Length of xr : "+xr.length); //"length" is an attribute
+		System.out.println("Length of s1 : "+s1.length()); //"length()" is a method
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q10 method "trim()"
+===================
+class Demo{
+	public static void main(String[] args){
+		String s1=new String(" abc ");
+		System.out.println("Length of s1 : "+s1.length()); //5
+		
+		s1.trim();	
+		System.out.println("Length of s1 : "+s1.length()); //5
+		
+		String s2=s1.trim();
+		System.out.println("Length of s2 : "+s2.length()); //3
+		System.out.println(s1.trim().length()); //3
+		
+		System.out.println(" abc ".length()); //5
+		System.out.println(" abc ".trim().length()); //3
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q11 method "substring(int)","substring(int,int)"
+================================================
+class Demo{
+	public static void main(String[] args){
+		String s1="0123456789";
+		System.out.println(s1);
+		System.out.println(s1.substring(3)); //3456789
+		System.out.println(s1.substring(3,5)); //34
+		System.out.println(s1.substring(3,6)); //345
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q12 Split(str-regx)
+===================
+class Demo{
+	public static void main(String[] args){
+		String nameList="Danapala Gunapala Somapala Siripala";
+		String[] names=nameList.split(" ");
+		for(String name: names){
+			System.out.println(name);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q13
+class Demo{
+	public static void main(String[] args){
+		String nameList="Danapala,Gunapala,Somapala,Siripala";
+		String[] names=nameList.split(",");
+		for(String name: names){
+			System.out.println(name);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q14
+class Demo{
+	public static void main(String[] args){
+		String nameList="Danapala8Gunapala6Somapala0Siripala";
+		String[] names=nameList.split("[\\d]");
+		for(String name: names){
+			System.out.println(name);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q15 charAt(int index)
+=====================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q16 int	compareTo(String anotherString)
+======================================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q17 int	compareToIgnoreCase(String anotherString)
+=================================================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q18 boolean	contains(CharSequence s)
+====================================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q19 boolean	endsWith(String suffix) and startsWith(String prefix)
+================================================================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q20 int	indexOf(int ch) and int	indexOf(String str)
+=====================================================
+class Demo{
+	public static void main(String[] args){
+		String name="Niroth Lakmal";
+		System.out.println(name.indexOf(" "));
+		System.out.println(name.indexOf(' '));
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q21 char[]	toCharArray()
+========================
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q22
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		Scanner input=new Scanner(System.in);
+		System.out.print("Input valid ID (S001) : ");
+		String id=input.nextLine();
+		if(isValis(id)){
+			System.out.println(id +" is valid");
+		}else{
+			System.out.println(id +" is invalid");
+		}
+	}
+	public static boolean isValis(String id){
+		if(id.length()==4 && id.charAt(0)=='S'){
+			String last3Chars=id.substring(1);
+			char[] chArray=last3Chars.toCharArray();
+			for(int i=0; i<chArray.length; i++){
+				if(!Character.isDigit(chArray[i])){
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q23 Immutable "Date"
+====================
+import java.util.*;
+class Date{
+	private int year;
+	private int month;
+	private int day;
+	public Date(){
+		year=1970;
+		month=1;
+		day=1;
+	}
+	public Date(int year, int month, int day){
+		this.year=year;
+		this.month=month;
+		this.day=day;
+	}
+	public Date(Date date){
+		this(date.year, date.month, date.day);
+	}
+	public String toString(){
+		return year+"-"+month+"-"+day;
+	}
+	public void setDate(int year, int month, int day){
+		this.year=year;
+		this.month=month;
+		this.day=day;
+	}
+	public void setDate(Date date){
+		setDate(date.year,date.month, date.day);
+	}
+	public void setYear(int year){
+		this.year=year;
+	}
+	public void setMonth(int month){
+		this.month=month;
+	}
+	public void setDay(int day){
+		this.day=day;
+	}
+}
+class Demo{
+	public static void main(String[] args){
+		Date d1=new Date(2022,11,1);
+		Date d2=new Date();
+		
+		System.out.println(d1); //2022-11-1
+		
+		d1.setDate(1990,12,31);
+		System.out.println(d1); //1990-12-31
+		
+		d1.setDate(d2);
+		System.out.println(d1); //1970-1-1
+		
+		d1.setYear(1992);
+		System.out.println(d1); //1992-1-1
+		
+		d1.setMonth(8);
+		System.out.println(d1); //1992-8-1
+		
+		d1.setDay(12);
+		System.out.println(d1); //1992-8-12
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q24 Immutable Class from Q23
+============================
+import java.util.*;
+class Date{
+	private int year;
+	private int month;
+	private int day;
+	public Date(){
+		year=1970;
+		month=1;
+		day=1;
+	}
+	public Date(int year, int month, int day){
+		this.year=year;
+		this.month=month;
+		this.day=day;
+	}
+	public Date(Date date){
+		this(date.year, date.month, date.day);
+	}
+	public String toString(){
+		return year+"-"+month+"-"+day;
+	}
+	public Date setDate(int year, int month, int day){
+		return new Date(year,month,day);
+	}
+	public Date setDate(Date date){
+		return new Date(date);
+	}
+	public Date setYear(int year){
+		return new Date(year,this.month,this.day);
+	}
+	public Date setMonth(int month){
+		return new Date(this.year,month,this.day); 
+	}
+	public Date setDay(int day){
+		return new Date(this.year,this.month,day);
+	}
+}
+class Demo{
+	public static void main(String[] args){
+		Date d1=new Date(2022,11,1);
+		Date d2=new Date();
+		
+		System.out.println(d1); //2022-11-1
+		
+		d1.setDate(1990,12,31);
+		System.out.println("Current Date : "+d1); //2022-11-1
+		
+		Date newDate=d1.setDate(1990,12,31);
+		System.out.println("New  Date : "+newDate );//1990-12-31
+		
+		d1.setDate(d2);
+		System.out.println(d1); //2022-11-1
+		System.out.println(d1.setDate(d2)); //1970-1-1
+	}
+}
+ 
+////////////////////////////////////////////////////////////////////////////////////////////
+					StringBuffer vs StringBuilder
+////////////////////////////////////////////////////////////////////////////////////////////
+Q25
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		StringBuffer sb1=new StringBuffer("abc");
+		System.out.println(sb1); //sb1.toString()
+		sb1.append("xyz");
+		System.out.println(sb1); //abcxyz
+		
+		StringBuffer sb2=sb1.append("pqr");
+		System.out.println(sb1); //abcxyzpqr
+		System.out.println(sb2); //abcxyzpqr
+		System.out.println(sb1==sb2); //true
+	}
+}
+//---------------------------------------------------------
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String s1="abc";
+		String s2=s1.concat("xyz");
+		System.out.println("s1 : "+s1); //abc
+		System.out.println("s2 : "+s2); //abcxyz
+		System.out.println(s1==s2); //false
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q26
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		StringBuffer sb1=new StringBuffer(6);
+		System.out.println("length of sb : "+sb1.length()); //0
+		System.out.println("capacity of sb : "+sb1.capacity());//6
+		
+		sb1.append("abcdef");
+		System.out.println("length of sb : "+sb1.length()); //6
+		System.out.println("capacity of sb : "+sb1.capacity());//6
+		
+		sb1.append("x");
+		System.out.println("length of sb : "+sb1.length()); //7
+		System.out.println("capacity of sb : "+sb1.capacity());//14
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+			Wrapper Classes
+			byte	- Byte
+			short	- Short
+			int 	- Integer
+			long	- Long
+			float	- Float
+			double	- Double
+			char	- Character
+			boolean	- Boolean
+////////////////////////////////////////////////////////////////////////////////////////////
+Q27
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		int x=100; //Primitive
+		Integer iob=new Integer(100); //Wrapper class
+		
+		System.out.println(x+" "+iob); //100 100
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q28
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		int x=100; //Primitive
+		Integer iob=new Integer(100); 
+		
+		//int y=iob; //Illegal JDK1.4
+		int y=iob.intValue(); //Unboxing
+		
+		int a=iob; //Legal (Since JDK1.5)-->Auto Unboxing
+		//---------------------------------------------------
+		
+		//Integer iob2=x; //Illegal at JDK1.4
+		Integer iob2=Integer.valueOf(x); //Boxing
+		Integer iob=x; //Legal (Since JDK1.5) Auto Boxing
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q29
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		int x=100; //Primitive
+		Integer iob=new Integer(100); 
+		System.out.println(x+iob); //Legal, since JDK1.5 =>Auto unboxing
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q30
+import java.util.*;
+class Demo{
+	public static void method1(int x){
+		System.out.println("method1(int)");
+	}
+	public static void method2(Integer iob){
+		System.out.println("method1(Integer)");
+	}
+	public static void main(String[] args){
+		int x=100; //Primitive
+		Integer iob=new Integer(100); 
+		method1(x);
+		method1(iob); //Legal, auto unboxing
+		
+		method2(iob); 
+		method2(x); //Legal, x auot boxing
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q31
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		int x=100; //Primitive
+		Integer iob=x; //Legal
+		//Double dob=x; //Illegal
+		Double dob=(double)x; //Legal
+		
+		Integer iob2=new Integer(200);
+		double d=iob2; //Legal->Unboxing "Integer to int"and wider conversion "int to double"
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+				String Formating
+////////////////////////////////////////////////////////////////////////////////////////////
+Q3
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String fs;
+		fs=String.format("%f",123000.1243,240000.6789);
+		System.out.println(fs); //123000.124300
+		
+		fs=String.format("%2$f",123000.1243,240000.6789);
+		System.out.println(fs); //240000.6789
+		
+		fs=String.format("%2$25f",123000.1243,240000.6789);
+		System.out.println(fs); //         240000.678900
+		
+		fs=String.format("%2$25.2f",123000.1243,240000.6789);
+		System.out.println(fs); //         240000.68
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q33
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String fs;
+		fs=String.format("%2$025.2f",123000.1243,240000.6789);
+		System.out.println(fs); //         240000.68
+		
+		fs=String.format("%2$-25.2f",123000.1243,240000.6789);
+		System.out.println(fs); //         240000.68
+		
+		fs=String.format("%2$0,+(25.2f",123000.1243,240000.6789);
+		System.out.println(fs); //         240000.68
+		
+		fs=String.format("%2$0,+(25.2f",123000.1243,-240000.6789);
+		System.out.println(fs); //         240000.68
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q34
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String[] names={"Pala","Yasapala Dissanayaka","Gotabaya"};
+		double[] salary={1234500.1234,-230000.123,45};
+		int[] age={12,34,45};
+		
+		for (int i = 0; i < 3; i++){
+			System.out.println(names[i]+"\t"+age[i]+"\t"+salary[i]);
+		}
+		
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q35
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String[] names={"Pala","Yasapala Dissanayaka","Gotabaya"};
+		double[] salary={1234500.1234,-230000.123,45};
+		int[] age={12,34,45};
+		
+		for (int i = 0; i < 3; i++){
+			String fs=String.format("%s%d%f",names[i],age[i],salary[i]);
+			System.out.println(fs);
+		}
+		
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q36
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String[] names={"Pala","Yasapala Dissanayaka","Gotabaya"};
+		double[] salary={1234500.1234,-230000.123,45};
+		int[] age={12,34,45};
+		
+		for (int i = 0; i < 3; i++){
+			String fs=String.format("%30s%5d%15f",names[i],age[i],salary[i]);
+			System.out.println(fs);
+		}
+		
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q37
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String[] names={"Pala","Yasapala Dissanayaka","Gotabaya"};
+		double[] salary={1234500.1234,-230000.123,45};
+		int[] age={12,34,45};
+		
+		for (int i = 0; i < 3; i++){
+			String fs=String.format("%-30s%-5d%,(15.2f",names[i],age[i],salary[i]);
+			System.out.println(fs);
+		}
+		
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q38
+import java.util.*;
+class Demo{
+	public static void main(String[] args){
+		String[] names={"Pala","Yasapala Dissanayaka","Gotabaya"};
+		double[] salary={1234500.1234,-230000.123,45};
+		int[] age={12,34,45};
+		
+		for (int i = 0; i < 3; i++){
+			System.out.printf("%-30s%-5d%,(15.2f\n",names[i],age[i],salary[i]);
+		}
+		
+	}
+		
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q39
+class Demo {
+	public static void main(String[] args) {
+		System.out.printf("Hello Java");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q40
+class Demo {
+	public static void main(String[] args) {
+		System.out.printf("Hello Java");
+		System.out.printf("@ IJSE");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q41
+class Demo {
+	public static void main(String[] args) {
+		System.out.printf("Hello Java\n");
+		System.out.printf("@ IJSE\n");
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q42
+class Demo {
+	public static void main(String[] args) {
+		int age=100;
+		System.out.printf(); //Your age is : 100
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q43
+class Demo {
+	public static void main(String[] args) {
+		int age=100;
+		System.out.printf("Your age is : "+age); //Your age is : 100
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q44
+class Demo {
+	public static void main(String[] args) {
+		int x=100,y=200;
+		System.out.printf(); //100 200
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q45
+class Demo {
+	public static void main(String[] args) {
+		int x=100,y=200;
+		System.out.printf(x+" "+y); //100 200
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q46
+class Demo {
+	public static void main(String[] args) {
+		int x=100,y=200;
+		System.out.printf(x+"\n"); //100
+		System.out.printf("%d",x); //100
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q47
+class Demo {
+	public static void main(String[] args) {
+		int age=10;
+		System.out.printf(); //Your age is : 10
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q48
+class Demo {
+	public static void main(String[] args) {
+		int age=10;
+		System.out.printf("Your age is : %d",age);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q49
+class Demo {
+	public static void main(String[] args) {
+		String name="Niroth";
+		System.out.printf("Your name is : %s",name);
+	}
+}
+//%d--> Decimal
+//%f--> Floating point
+//%c--> Character
+//%s--> String
+//%b--> Boolean
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q50
+class Demo {
+	public static void main(String[] args) {
+		int age=100;
+		String fs=String.format("Your name is : %d",age);
+		System.out.println(fs);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q51
+class Demo {
+	public static void main(String[] args) {
+		double salary=123400.678;
+		String fs=String.format("%f",salary);
+		System.out.println(fs);
+		
+		fs=String.format("%f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$f",salary,100000.567); //argument index-->2
+		System.out.println(fs);
+		
+		fs=String.format("%2f",salary,100000.567); //width-->2
+		System.out.println(fs);
+		
+		fs=String.format("%.2f",salary,100000.567); //
+		System.out.println(fs);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q52
+class Demo {
+	public static void main(String[] args) {
+		double salary=123400.678;
+		String fs;
+		fs=String.format("%2$20.2f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$020.2f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$0,20.2f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$0,+20.2f",salary,100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$0,(20.2f",salary,-100000.567);
+		System.out.println(fs);
+		
+		fs=String.format("%2$-,(20.2f",salary,-100000.567);
+		System.out.println(fs);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+					String searching
+////////////////////////////////////////////////////////////////////////////////////////////
+Q53
+class Demo {
+	public static void main(String[] args) {
+		String[] name={"Danapala","Siripala","Somapala","Danasiri","Somasiri","Danawardhana"};
+		//
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q54
+class Demo {
+	public static void main(String[] args) {
+		String[] name={"Danapala","Siripala","Somapala","Danasiri","Somasiri"};
+		for(String s: name){
+			if(s.endsWith("pala")){
+				System.out.println(s);
+			}
+		}
+		System.out.println("-------------");
+		for(String s: name){
+			if(s.contains("pala")){
+				System.out.println(s);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q55
+class Demo {
+	public static void main(String[] args) {
+		String[] name={"Danapala","Siripala","Somapala","Danasiri","Somasiri","Danawardhana"};
+		for(String s: name){
+			if(s.startsWith("Dana")){
+				System.out.println(s);
+			}
+		}
+		System.out.println("-------------");
+		for(String s: name){
+			if(s.contains("Dana")){
+				System.out.println(s);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q56
+class Demo {
+	public static void main(String[] args) {
+		String[] name={"Danapala","Siripala","Somapala","Danasiri","Somasiri","Danawardhana"};
+		
+		for(String s : name){
+			if(s.lastIndexOf("pala")!=-1){		
+				System.out.println(s);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q57
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String[] name={"Danapala","Siripala","Somapala","Danasiri","Somasiri","Danawardhana"};
+		
+		Pattern p=Pattern.compile("pala");
+		for(String s : name){
+			Matcher m=p.matcher(s);
+			if(m.find()){
+				System.out.println(s);
+			}
+		}
+		
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q58
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="DanapalaSiripalaSomapalaDanasiriSomasiriDanawardhana";
+		
+		Pattern p=Pattern.compile("pala");
+		Matcher m=p.matcher(name);	
+		
+		while(m.find()){
+			System.out.println(m.start()+" : "+m.group());
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q59
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="ab012aa0xttt0Xab12hhh0xaaa12ggg";
+		//prints hexdecimal numbers
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q60
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="ab012aa0xttt0Xab12hhh0xaaa12gg0xg";
+		
+		Pattern p=Pattern.compile("0[xX][0-9a-fA-F]*");
+		Matcher m=p.matcher(name);
+		
+		while(m.find()){
+			System.out.println(m.group());
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q61
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="ab012aa0xttt0Xab12hhh0xaaa12gg0xg";
+		
+		Pattern p=Pattern.compile("0[xX][0-9a-fA-F]{1,}");
+		Matcher m=p.matcher(name);
+		
+		while(m.find()){
+			System.out.println(m.group());
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q62
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="ab%200aa0xtt^100t0Xab12hh*300h0xa@400aa12gg0xg";
+		
+		Pattern p=Pattern.compile("[ ]"); 
+		Matcher m=p.matcher(name);
+		
+		while(m.find()){
+			System.out.println(m.group());
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q63
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q64 Exercise
+============
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="120ad300ty560hfg250uiui700";
+		
+		Pattern p=Pattern.compile("[ ]"); 
+		Matcher m=p.matcher(name);
+		
+		while(m.find()){
+			System.out.println(m.group());
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q65
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="120ad300ty560hfg250uiui700";
+		
+		Pattern p=Pattern.compile("[\\d]{1,}"); 
+		Matcher m=p.matcher(name);
+		
+		while(m.find()){
+			int num=Integer.parseInt(m.group());
+			System.out.println(num);
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q66
+import java.util.regex.*;
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="120ad300ty560hfg250uiui700";
+		
+		Pattern p=Pattern.compile("[\\d]{1,}"); 
+		Matcher m=p.matcher(name);
+		
+		int count=0;
+		while(m.find()){
+			count++;
+		}
+		m.reset();
+		int[] ar=new int[count];
+		
+		int i=0;
+		while(m.find()){
+			ar[i++]=Integer.parseInt(m.group());
+		}
+		System.out.println(Arrays.toString(ar));
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+			String Tokenizer
+////////////////////////////////////////////////////////////////////////////////////////////
+Q67
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala Siripala\nSomapala Danasiri\tSomasiri Danawardhana";
+		StringTokenizer st=new StringTokenizer(name);//Default Delimiter -->Space, tab, newline
+		while(st.hasMoreTokens()){
+			String s1=st.nextToken();
+			System.out.println(s1);
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q68
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala,Siripala,Somapala,Danasiri,tSomasiri,Danawardhana";
+		StringTokenizer st=new StringTokenizer(name);
+		while(st.hasMoreTokens()){
+			String s1=st.nextToken(",");
+			System.out.println(s1);
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q69
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala,Siripala,Somapala,Danasiri,tSomasiri,Danawardhana";
+		StringTokenizer st=new StringTokenizer(name,",");
+		while(st.hasMoreTokens()){
+			String s1=st.nextToken(",");
+			System.out.println(s1);
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q70
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala,Siripala,Somapala,Danasiri,tSomasiri,Danawardhana";
+		StringTokenizer st=new StringTokenizer(name,",",true);
+		while(st.hasMoreTokens()){
+			String s1=st.nextToken(",");
+			System.out.println(s1);
+		}
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q71 Using "split() of String
+============================
+
+import java.util.*;
+class Demo { 
+	public static void main(String[] args) {
+		String name="Danapala,Siripala,Somapala,Danasiri,tSomasiri,Danawardhana";
+		String[] str=name.split(",");	
+		for(String s : str){
+			System.out.println(s);
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q72
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala&Siripala#Somapala!Danasiri*tSomasiri-Danawardhana";
+		String[] str=name.split("[\\W]");	
+		for(String s : str){
+			System.out.println(s);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q73 Using Class "Scanner"
+=========================
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala Siripala Somapala Danasiri tSomasiri Danawardhana";
+		
+		Scanner sc=new Scanner(name); //Default delimiter tab, newline, space
+		while(sc.hasNext()){
+			String s=sc.next();
+			System.out.println(s);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q74
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala,Siripala,Somapala,Danasiri,Somasiri,Danawardhana";
+		
+		Scanner sc=new Scanner(name);
+		sc.useDelimiter(",");
+		while(sc.hasNext()){
+			String s=sc.next();
+			System.out.println(s);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q75
+import java.util.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala0xabSiripala0x544Somapala0xabc56Danasiri0x34Somasiri0x34Danawardhana";
+		
+		Scanner sc=new Scanner(name);
+		sc.useDelimiter("0[Xx][0-9a-fA-F]*");
+		while(sc.hasNext()){
+			String s=sc.next();
+			System.out.println(s);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q76
+import java.util.*;
+import java.util.regex.*;
+class Demo {
+	public static void main(String[] args) {
+		String name="Danapala#Siripala&Somapala*Danasiri!Somasiri@Danawardhana";
+		
+		Scanner sc=new Scanner(name);
+		Pattern p=Pattern.compile("[\\W]");
+		sc.useDelimiter(p);
+		while(sc.hasNext()){
+			String s=sc.next();
+			System.out.println(s);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+						Input/ Output Streams
+////////////////////////////////////////////////////////////////////////////////////////////
+Q77 Class "File"
+================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) {
+		File f1=new File("Demo.java");
+		System.out.println(f1.isFile());
+		System.out.println(f1.exists());
+		System.out.println(f1.isDirectory());
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q78
+import java.io.*;
+class Demo {
+	public static void main(String[] args) {
+		File f1=new File("F:/GDSE63/oop/Demo.java"); //Absolute path
+		File f2=new File("../GDSE65/Example.java"); //Relative path
+		System.out.println("F1 : "+f1.isFile());
+		System.out.println("F1 : "+f1.exists());
+		
+		System.out.println("F2 : "+f2.isFile());
+		System.out.println("F2 : "+f2.exists());
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q79 Create a new file
+======================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		File f1=new File("Test.txt");
+		System.out.println("F1 : "+f1.isFile());
+		System.out.println("F1 : "+f1.exists());
+		
+		f1.createNewFile();
+		System.out.println("F1 : "+f1.isFile());
+		System.out.println("F1 : "+f1.exists());
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q80 Make directories
+====================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		File f1=new File("JDBC");
+		System.out.println("F1 : "+f1.isDirectory());
+		System.out.println("F1 : "+f1.exists());
+		
+		f1.mkdir();
+		System.out.println("F1 : "+f1.isDirectory());
+		System.out.println("F1 : "+f1.exists());
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q81
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		File f1=new File("JDBC");
+		System.out.println("F1 : "+f1.isDirectory());
+		System.out.println("F1 : "+f1.exists());
+		
+		f1.delete();
+		System.out.println("F1 : "+f1.isDirectory());
+		System.out.println("F1 : "+f1.exists());
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q82 Rename a file or folder
+===========================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		File f1=new File("Test.txt");
+		System.out.println("F1 : "+f1.isFile());
+		System.out.println("F1 : "+f1.exists());
+		
+		f1.renameTo(new File("Demo.txt"));
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q83 Move a file
+===============
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		File f1=new File("Demo.txt");
+		System.out.println("F1 : "+f1.isFile());
+		System.out.println("F1 : "+f1.exists());
+		
+		f1.renameTo(new File("..\\GDSE65\\Demo.txt"));
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+									Io Streams
+////////////////////////////////////////////////////////////////////////////////////////////
+Q84
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		System.out.println(System.out); //
+		PrintStream ps=System.out;
+		ps.println("Hello Java");
+		ps.write(65);
+		ps.write('\n');
+		ps.write(66);
+		ps.flush();
+		
+		System.out.write(67);
+		System.out.flush();
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q85
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		System.out.println(System.in); //
+		//------------------------------
+		BufferedInputStream bis=(BufferedInputStream)System.in; //
+		int code=bis.read(); 
+		System.out.println((char)code);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q86 FileInputStream
+===================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileInputStream fis=new FileInputStream("Demo.java");
+		System.out.println((char)fis.read());
+		System.out.println((char)fis.read());
+		System.out.println((char)fis.read());
+		System.out.println((char)fis.read());
+		System.out.println((char)fis.read());
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q87
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileInputStream fis=new FileInputStream("Demo.java");
+		int code=fis.read();
+		while(code!=-1){
+			System.out.print((char)code);
+			code=fis.read();
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q88 FileReader
+==============
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileReader fis=new FileReader("Demo.java");
+		int code=fis.read();
+		while(code!=-1){
+			System.out.print((char)code);
+			code=fis.read();
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q89
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileReader fr=new FileReader("Demo.java");
+		BufferedReader br=new BufferedReader(fr);
+		String line=br.readLine();
+		while(line!=null){
+			System.out.println(line);
+			line=br.readLine();
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q90
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		InputStreamReader isr=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(isr);
+		System.out.print("Input your name : ");
+		String name=br.readLine();
+		System.out.println(name);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q91 File Writing
+================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileInputStream fis=new FileInputStream("Demo.java");
+		FileOutputStream fos=new FileOutputStream("Demo.txt");
+		
+		int code=fis.read();
+		while(code!=-1){
+			fos.write(code);
+			code=fis.read();
+		}
+		//fos.flush();//auto flush
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q92
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileInputStream fis=new FileInputStream("Demo.java");
+		FileWriter fw=new FileWriter("Demo.txt");
+		
+		int code=fis.read();
+		while(code!=-1){
+			fw.write(code);
+			code=fis.read();
+		}
+		fw.flush();//fw.close()
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q93 Appendable File Writer
+==========================
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		FileInputStream fis=new FileInputStream("Demo.java");
+		FileWriter fw=new FileWriter("Demo.txt",true); //appendable file writer
+		
+		int code=fis.read();
+		while(code!=-1){
+			fw.write(code);
+			code=fis.read();
+		}
+		fw.flush();//fw.close()
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q94
+//--------------------------Student.txt---------------------------------------
+S001,Nimal,67,78
+S002,Amal,87,48
+S003,Bimal,90 98
+//----------------------------------------------------------------------------
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q95
+import java.io.*;
+class Demo {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new FileReader("Student.txt"));
+		
+		Student[] stArray=new Student[0];
+		
+		String line=br.readLine();
+		while(line!=null){
+			String[] rowData=line.split(" ");
+			String id=rowData[0];
+			String name=rowData[1];
+			int prf=Integer.parseInt(rowData[2]);
+			int dbms=Integer.parseInt(rowData[3]);
+					
+			Student s1=new Student(id,name,prf,dbms);
+			//--------------------------------------
+			Student[] tempStArray=new Student[stArray.length+1];
+			for(int i=0; i<stArray.length; i++){
+				tempStArray[i]=stArray[i];
+			}
+			stArray=tempStArray;
+			stArray[stArray.length-1]=s1;
+			
+			line=br.readLine();	
+		}
+		for(Student st :stArray){
+			System.out.println(st);
+		}
+		//--------------------------------
+		Student[] tempStArray=new Student[stArray.length+1];
+		for(int i=0; i<stArray.length; i++){
+			tempStArray[i]=stArray[i];
+		}
+		stArray=tempStArray;
+		stArray[stArray.length-1]=new Student("S004","Ajith",56,45);
+		
+		//---------------------------------------------------------
+		//File Write
+		FileWriter fr=new FileWriter("Student.txt");
+		for(Student stu : stArray){
+			fr.write(stu.id+" ");
+			fr.write(stu.name+" ");
+			fr.write(stu.prf+" ");
+			fr.write(stu.dbms+"\n");
+		}
+		fr.flush();
+	}
+}
+class Student{
+	String id;
+	String name;
+	int prf;
+	int dbms;
+	Student(String id, String name, int prf, int dbms){
+		this.id=id;
+		this.name=name;
+		this.prf=prf;
+		this.dbms=dbms;
+	}
+	public String toString(){
+		return id+"-"+name+"-"+prf+"-"+dbms;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q96
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q97
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q98
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q99
+
+////////////////////////////////////////////////////////////////////////////////////////////
+Q100
